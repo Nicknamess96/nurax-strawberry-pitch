@@ -12,6 +12,27 @@
 </head>
 <body>
 
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- CURRENT SECTION INDICATOR -->
+<div class="section-indicator" id="sectionIndicator">
+    <span class="indicator-label">Sezione</span>
+    <span class="indicator-name" id="indicatorName">Hero</span>
+</div>
+
+<!-- SIDE NAV -->
+<nav class="side-nav" aria-label="Sezioni della pagina">
+    <a href="#vision" class="nav-dot" data-label="Visione"><span class="dot"></span></a>
+    <a href="#pilastri" class="nav-dot" data-label="Pilastri"><span class="dot"></span></a>
+    <a href="#ai" class="nav-dot" data-label="AI"><span class="dot"></span></a>
+    <a href="#genetica" class="nav-dot" data-label="Genetica"><span class="dot"></span></a>
+    <a href="#mercato" class="nav-dot" data-label="Mercato"><span class="dot"></span></a>
+    <a href="#economia" class="nav-dot" data-label="Economia"><span class="dot"></span></a>
+    <a href="#team" class="nav-dot" data-label="Team"><span class="dot"></span></a>
+    <a href="#futuro" class="nav-dot" data-label="Futuro"><span class="dot"></span></a>
+</nav>
+
 <!-- HERO -->
 <header class="hero">
     <div class="container">
@@ -25,7 +46,7 @@
             </div>
         </div>
 
-        <h1>Coltiviamo intelligenza<br><span class="accent">raccogliamo sapore</span></h1>
+        <h1>L'agricoltura del futuro<br><span class="accent">cresce in Sardegna</span></h1>
         <p class="subtitle">Una serra autonoma controllata da intelligenza artificiale<br>e un laboratorio di genetica al servizio della migliore agricoltura italiana</p>
         <div class="hero-meta">
             <span>📍 Sardegna</span>
@@ -46,7 +67,7 @@
 </header>
 
 <!-- VISION -->
-<section class="section">
+<section class="section" id="vision">
     <div class="container narrow">
         <h2 class="section-title">La nostra visione</h2>
         <div class="vision-text">
@@ -59,7 +80,7 @@
 </section>
 
 <!-- I PILASTRI -->
-<section class="section dark">
+<section class="section dark" id="pilastri">
     <div class="container">
         <h2 class="section-title">I tre pilastri di Nurax Agriculture</h2>
         <p class="section-lead">Un sistema integrato dove ogni parte parla con le altre: la serra produce, l'AI gestisce, la genetica migliora ad ogni ciclo.</p>
@@ -199,7 +220,7 @@
 </section>
 
 <!-- AI DEEP DIVE -->
-<section class="section dark">
+<section class="section dark" id="ai">
     <div class="container">
         <h2 class="section-title">🤖 L'Intelligenza Artificiale spiegata</h2>
         <p class="section-lead">Cosa fa esattamente il "cervello" della serra, perché è importante, e quali vantaggi porta rispetto alla coltivazione tradizionale.</p>
@@ -491,7 +512,7 @@
 </section>
 
 <!-- GENETICS DEEP DIVE -->
-<section class="section">
+<section class="section" id="genetica">
     <div class="container">
         <h2 class="section-title">🧬 La Genetica spiegata</h2>
         <p class="section-lead">Perché coltiviamo la nostra genetica invece di comprare ogni anno le piante. Cosa ci dà un vantaggio enorme nel medio-lungo termine.</p>
@@ -725,7 +746,7 @@
 </section>
 
 <!-- A CHI VENDIAMO -->
-<section class="section">
+<section class="section" id="mercato">
     <div class="container narrow">
         <h2 class="section-title">A chi vendiamo le fragole</h2>
         <p class="section-lead">Solo professionisti del settore alimentare. Niente vendita al dettaglio, niente clienti privati. Volumi controllati, prezzi premium.</p>
@@ -784,7 +805,7 @@
 </section>
 
 <!-- TRE SCENARI -->
-<section class="section dark">
+<section class="section dark" id="economia">
     <div class="container">
         <h2 class="section-title">📊 Tre scenari di scala</h2>
         <p class="section-lead">Possiamo costruire questo progetto a tre scale diverse, in base al capitale che vogliamo investire e alla velocità di crescita. Sono <strong>tre opzioni reali</strong>, validate contro la letteratura scientifica e i prezzi di mercato 2026.</p>
@@ -1231,7 +1252,7 @@
 </section>
 
 <!-- IL TEAM -->
-<section class="section">
+<section class="section" id="team">
     <div class="container">
         <h2 class="section-title">Il Team</h2>
         <p class="section-lead">Una collaborazione padre-figlio. Competenze diverse e complementari che si fondono in un progetto comune.</p>
@@ -1530,7 +1551,7 @@
 </section>
 
 <!-- ROADMAP FUTURO -->
-<section class="section dark">
+<section class="section dark" id="futuro">
     <div class="container">
         <h2 class="section-title">🚀 Opportunità di crescita futura</h2>
         <p class="section-lead">La serra di fragole è la fondazione. Su questa base, abbiamo identificato <strong>4 vie di espansione</strong> ricavabili senza investimenti aggiuntivi significativi, ognuna con potenziale di moltiplicare i ricavi.</p>
@@ -1629,6 +1650,59 @@
         <p class="small">Parte dell'ecosistema Nurax Dynamics · Sardegna, Italia</p>
     </div>
 </footer>
+
+<script>
+// Scroll progress bar
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progressBar.style.width = scrolled + '%';
+}, { passive: true });
+
+// Section indicator + side nav active state
+const sections = [
+    { id: 'vision', name: 'La nostra visione' },
+    { id: 'pilastri', name: 'I tre pilastri' },
+    { id: 'ai', name: 'Intelligenza Artificiale' },
+    { id: 'genetica', name: 'Genetica' },
+    { id: 'mercato', name: 'Mercato e clienti' },
+    { id: 'economia', name: 'Economia e investimento' },
+    { id: 'team', name: 'Il Team' },
+    { id: 'futuro', name: 'Opportunità future' }
+];
+
+const indicatorName = document.getElementById('indicatorName');
+const indicator = document.getElementById('sectionIndicator');
+const navDots = document.querySelectorAll('.nav-dot');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const section = sections.find(s => s.id === entry.target.id);
+            if (section) {
+                indicatorName.textContent = section.name;
+                indicator.classList.add('visible');
+                navDots.forEach(dot => {
+                    dot.classList.toggle('active', dot.getAttribute('href') === '#' + section.id);
+                });
+            }
+        }
+    });
+}, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+sections.forEach(s => {
+    const el = document.getElementById(s.id);
+    if (el) observer.observe(el);
+});
+
+// Hide indicator when at top (in hero)
+window.addEventListener('scroll', () => {
+    if (window.scrollY < 200) {
+        indicator.classList.remove('visible');
+    }
+}, { passive: true });
+</script>
 
 </body>
 </html>
