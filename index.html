@@ -23,14 +23,39 @@
 
 <!-- SIDE NAV -->
 <nav class="side-nav" aria-label="Sezioni della pagina">
-    <a href="#vision" class="nav-dot" data-label="Visione"><span class="dot"></span></a>
-    <a href="#pilastri" class="nav-dot" data-label="Pilastri"><span class="dot"></span></a>
-    <a href="#ai" class="nav-dot" data-label="AI"><span class="dot"></span></a>
-    <a href="#genetica" class="nav-dot" data-label="Genetica"><span class="dot"></span></a>
-    <a href="#mercato" class="nav-dot" data-label="Mercato"><span class="dot"></span></a>
-    <a href="#economia" class="nav-dot" data-label="Economia"><span class="dot"></span></a>
-    <a href="#team" class="nav-dot" data-label="Team"><span class="dot"></span></a>
-    <a href="#futuro" class="nav-dot" data-label="Futuro"><span class="dot"></span></a>
+    <div class="side-nav-header">Indice</div>
+    <a href="#vision" class="nav-item" data-section="vision">
+        <span class="nav-marker"></span>
+        <span class="nav-text">La visione</span>
+    </a>
+    <a href="#pilastri" class="nav-item" data-section="pilastri">
+        <span class="nav-marker"></span>
+        <span class="nav-text">I tre pilastri</span>
+    </a>
+    <a href="#ai" class="nav-item" data-section="ai">
+        <span class="nav-marker"></span>
+        <span class="nav-text">Intelligenza Artificiale</span>
+    </a>
+    <a href="#genetica" class="nav-item" data-section="genetica">
+        <span class="nav-marker"></span>
+        <span class="nav-text">Genetica</span>
+    </a>
+    <a href="#mercato" class="nav-item" data-section="mercato">
+        <span class="nav-marker"></span>
+        <span class="nav-text">Mercato &amp; clienti</span>
+    </a>
+    <a href="#economia" class="nav-item" data-section="economia">
+        <span class="nav-marker"></span>
+        <span class="nav-text">Economia</span>
+    </a>
+    <a href="#team" class="nav-item" data-section="team">
+        <span class="nav-marker"></span>
+        <span class="nav-text">Il Team</span>
+    </a>
+    <a href="#futuro" class="nav-item" data-section="futuro">
+        <span class="nav-marker"></span>
+        <span class="nav-text">Opportunità future</span>
+    </a>
 </nav>
 
 <!-- HERO -->
@@ -1674,7 +1699,7 @@ const sections = [
 
 const indicatorName = document.getElementById('indicatorName');
 const indicator = document.getElementById('sectionIndicator');
-const navDots = document.querySelectorAll('.nav-dot');
+const navItems = document.querySelectorAll('.nav-item');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1683,8 +1708,8 @@ const observer = new IntersectionObserver((entries) => {
             if (section) {
                 indicatorName.textContent = section.name;
                 indicator.classList.add('visible');
-                navDots.forEach(dot => {
-                    dot.classList.toggle('active', dot.getAttribute('href') === '#' + section.id);
+                navItems.forEach(item => {
+                    item.classList.toggle('active', item.getAttribute('data-section') === section.id);
                 });
             }
         }
