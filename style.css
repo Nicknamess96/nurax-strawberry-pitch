@@ -2,31 +2,40 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --bg: #0a0b14;
-    --bg-section: #0f1019;
-    --bg-dark: #050610;
-    --bg-card: #161826;
-    --bg-card-elevated: #1d2030;
+    /* Nurax brand colors */
+    --nurax-purple: #7c3aed;
+    --nurax-purple-light: #a78bfa;
+    --nurax-purple-glow: rgba(124, 58, 237, 0.15);
+
+    /* Dark theme */
+    --bg: #06060a;
+    --bg-section: #0a0a10;
+    --bg-dark: #050508;
+    --bg-card: #0e0e16;
+    --bg-card-elevated: #16161f;
+
+    /* Agriculture accents (preserved) */
     --primary: #ff3b50;
     --primary-glow: #ff5d70;
     --accent: #00d68f;
     --accent-glow: #00f5a3;
     --gold: #ffd166;
     --warning: #f5a623;
-    --text: #e8e9f0;
-    --text-soft: #9ca0b3;
-    --text-dim: #6a6e80;
-    --border: #232638;
-    --border-bright: #2e3245;
+
+    --text: #f0f0f5;
+    --text-soft: #b0b0c0;
+    --text-dim: #7a7a90;
+    --border: #16161f;
+    --border-bright: #232638;
     --shadow: 0 4px 12px rgba(0,0,0,0.3);
     --shadow-lg: 0 12px 36px rgba(0,0,0,0.4);
-    --shadow-glow: 0 0 24px rgba(255,59,80,0.15);
+    --shadow-glow: 0 0 24px var(--nurax-purple-glow);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     color: var(--text);
     background: var(--bg);
@@ -80,6 +89,55 @@ body {
     letter-spacing: 4px;
     color: var(--primary);
     margin-bottom: 32px;
+}
+
+/* ===== NURAX LOGO ===== */
+.logo-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 60px;
+}
+
+.logo-mark {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 24px var(--nurax-purple-glow));
+}
+
+.logo-text {
+    text-align: left;
+    line-height: 1;
+}
+
+.logo-name {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(48px, 8vw, 84px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    line-height: 0.9;
+}
+
+.logo-vertical {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--nurax-purple-light);
+    margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+    .logo-block {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+    .logo-mark { width: 70px; height: 70px; }
+    .logo-text { text-align: center; }
 }
 
 .hero h1 {
