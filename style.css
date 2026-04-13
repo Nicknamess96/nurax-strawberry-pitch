@@ -2047,6 +2047,408 @@ body {
     font-weight: 600;
 }
 
+/* ===== FATHER SECTION ===== */
+.father-section {
+    margin-bottom: 56px;
+}
+
+.father-section h3 {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--nurax-purple);
+    display: inline-block;
+}
+
+.father-intro {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 760px;
+}
+
+.step-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+}
+
+.step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.step-card:hover {
+    border-color: var(--nurax-purple);
+    transform: translateY(-2px);
+}
+
+.step-num {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: linear-gradient(135deg, var(--nurax-purple) 0%, var(--accent) 100%);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.step-card h4 {
+    font-size: 17px;
+    color: white;
+    font-weight: 700;
+    margin: 12px 0 12px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.step-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.step-card li {
+    padding: 6px 0;
+    padding-left: 18px;
+    position: relative;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.step-card li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-glow);
+    font-weight: bold;
+}
+
+.step-card li strong {
+    color: var(--accent-glow);
+}
+
+/* INCENTIVES GRID */
+.incentives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.incentive-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    transition: transform 0.2s;
+}
+
+.incentive-card:hover { transform: translateY(-2px); }
+
+.incentive-card.confirmed {
+    border-left: 4px solid var(--accent);
+}
+
+.incentive-card.pending {
+    border-left: 4px solid var(--gold);
+}
+
+.incentive-status {
+    display: inline-block;
+    background: var(--bg-dark);
+    color: var(--accent-glow);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    border: 1px solid var(--accent);
+}
+
+.incentive-card.pending .incentive-status {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.incentive-card h4 {
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.incentive-amount {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent-glow);
+    margin-bottom: 12px;
+}
+
+.incentive-card.pending .incentive-amount {
+    color: var(--gold);
+}
+
+.incentive-card p {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+}
+
+.incentive-card p strong {
+    color: white;
+}
+
+/* STRATEGIES (Opzione A vs B) */
+.strategies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+    .strategies { grid-template-columns: 1fr; }
+}
+
+.strategy-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    transition: border-color 0.2s;
+}
+
+.strategy-card.recommended {
+    border: 2px solid var(--accent);
+    background: linear-gradient(180deg, rgba(0,214,143,0.05) 0%, var(--bg-card) 100%);
+    box-shadow: 0 8px 32px rgba(0,214,143,0.1);
+}
+
+.strategy-tag {
+    display: inline-block;
+    background: var(--bg-dark);
+    color: var(--text-soft);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+}
+
+.strategy-card.recommended .strategy-tag {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+}
+
+.strategy-card h3 {
+    font-size: 22px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border: none;
+    padding: 0;
+    display: block;
+}
+
+.strategy-summary {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.strategy-summary strong {
+    color: var(--accent-glow);
+}
+
+.strategy-numbers {
+    background: var(--bg-dark);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.strategy-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--text);
+    border-bottom: 1px dashed var(--border);
+}
+
+.strategy-row:last-child { border-bottom: none; }
+
+.strategy-row span:last-child {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.strategy-row.strategy-total {
+    border-top: 2px solid var(--border);
+    padding-top: 12px;
+    margin-top: 4px;
+    font-weight: 600;
+    color: white;
+}
+
+.strategy-row.strategy-total span:last-child {
+    color: white;
+    font-size: 14px;
+}
+
+.strategy-row.strategy-savings {
+    color: var(--accent-glow);
+}
+
+.strategy-row.strategy-savings span:last-child {
+    color: var(--accent-glow);
+}
+
+.strategy-row.strategy-net {
+    border-top: 2px solid var(--accent);
+    padding-top: 12px;
+    margin-top: 4px;
+    font-weight: 700;
+    color: white;
+    font-size: 14px;
+}
+
+.strategy-row.strategy-net span:last-child {
+    color: var(--accent-glow);
+    font-size: 16px;
+}
+
+.strategy-row.strategy-net.highlight {
+    background: linear-gradient(90deg, rgba(0,214,143,0.1) 0%, transparent 100%);
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 6px;
+}
+
+.strategy-benefit {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    padding: 14px 16px;
+    background: rgba(124, 58, 237, 0.06);
+    border-left: 3px solid var(--nurax-purple);
+    border-radius: 0 8px 8px 0;
+}
+
+.strategy-benefit strong {
+    color: var(--nurax-purple-light);
+}
+
+.strategy-note {
+    background: linear-gradient(135deg, rgba(245, 166, 35, 0.06) 0%, var(--bg-card) 100%);
+    border: 1px solid var(--gold);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 8px;
+}
+
+.strategy-note h4 {
+    font-size: 17px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.strategy-note p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.strategy-note p strong {
+    color: white;
+}
+
+.strategy-note p:last-child { margin-bottom: 0; }
+
+/* CHECKLIST */
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.check-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+}
+
+.check-item:hover {
+    border-color: var(--nurax-purple);
+}
+
+.check-num {
+    flex-shrink: 0;
+    background: var(--bg-dark);
+    color: var(--nurax-purple-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    border: 1px solid var(--nurax-purple);
+    font-family: 'Courier New', monospace;
+}
+
+.check-content strong {
+    display: block;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.check-content p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* ===== FUTURE OPPORTUNITIES ===== */
 .future-grid {
     display: grid;
