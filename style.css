@@ -1943,6 +1943,21 @@ body {
     background: linear-gradient(180deg, rgba(0,214,143,0.05) 0%, var(--bg-card) 100%);
 }
 
+.variety-card.super-premium {
+    border: 2px solid var(--gold);
+    background: linear-gradient(180deg, rgba(255,209,102,0.08) 0%, var(--bg-card) 100%);
+}
+
+.variety-card.super-premium .variety-tag {
+    background: var(--gold);
+    color: var(--bg-dark);
+    border-color: var(--gold);
+}
+
+.variety-card.super-premium .variety-stats span {
+    color: var(--gold);
+}
+
 .variety-tag {
     display: inline-block;
     background: var(--bg-dark);
@@ -2039,12 +2054,96 @@ body {
 }
 
 .portfolio-table tr.highlight {
-    background: rgba(0,214,143,0.05);
+    background: rgba(255,209,102,0.05);
 }
 
 .portfolio-table tr.highlight td {
-    color: var(--accent-glow);
+    color: var(--gold);
     font-weight: 600;
+}
+
+.portfolio-table tr.total-row {
+    background: linear-gradient(90deg, rgba(124,58,237,0.12) 0%, rgba(0,214,143,0.12) 100%);
+    border-top: 2px solid var(--accent);
+}
+
+.portfolio-table tr.total-row td {
+    color: white;
+    padding: 16px 12px;
+    font-size: 15px;
+}
+
+.portfolio-table tr.total-row td strong {
+    color: var(--accent-glow);
+}
+
+/* ===== VARIETY LEGAL STATUS ===== */
+.variety-legal {
+    margin-top: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+}
+
+.variety-legal h3 {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.legal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.legal-item {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-dark);
+    transition: border-color 0.2s;
+}
+
+.legal-item.legal-free {
+    border-left: 3px solid var(--accent);
+}
+
+.legal-item.legal-licensed {
+    border-left: 3px solid var(--nurax-purple);
+}
+
+.legal-item.legal-pending {
+    border-left: 3px solid var(--gold);
+}
+
+.legal-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.legal-item h4 {
+    font-size: 15px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.legal-item p {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.5;
+}
+
+.legal-item p strong {
+    color: var(--accent-glow);
+}
+
+.legal-item.legal-pending p strong {
+    color: var(--gold);
 }
 
 /* ===== FATHER SECTION ===== */
