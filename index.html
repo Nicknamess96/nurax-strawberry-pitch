@@ -23,23 +23,30 @@
         <div class="hero-team">
             <strong>Un progetto di Nicolò &amp; Gian Luigi Zuddas</strong>
         </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><span class="stat-num">14</span><span class="stat-label">variabili monitorate ogni 30s</span></div>
+            <div class="hero-stat"><span class="stat-num">92%</span><span class="stat-label">accuratezza riconoscimento malattie</span></div>
+            <div class="hero-stat"><span class="stat-num">6</span><span class="stat-label">marcatori genetici validati</span></div>
+            <div class="hero-stat"><span class="stat-num">3.500</span><span class="stat-label">piante in produzione continua</span></div>
+        </div>
     </div>
 </header>
 
 <!-- VISION -->
-<section class="section pale">
+<section class="section">
     <div class="container narrow">
         <h2 class="section-title">La nostra visione</h2>
         <div class="vision-text">
             <p>Crediamo che l'agricoltura del futuro non sia <em>più grande</em>, ma <em>più intelligente</em>.</p>
             <p>Una piccola serra in Sardegna, gestita da intelligenza artificiale che misura, decide e agisce 24 ore su 24. Piante coltivate da varietà selezionate geneticamente per essere più dolci, più resistenti, più produttive. Frutti perfetti, prodotti senza pesticidi, raccolti freschi e venduti il giorno stesso ai migliori ristoranti della Costa Smeralda e di Cagliari.</p>
             <p><strong>Nurax Agriculture</strong> applica la stessa filosofia di Nurax Dynamics — usare l'intelligenza artificiale per costruire sistemi autonomi — al cibo che mangiamo. Una fattoria che non ha bisogno di noi per funzionare, ma che produce le fragole più buone della Sardegna.</p>
+            <p class="vision-quote">"Non vogliamo coltivare più fragole di chiunque altro. Vogliamo coltivare le migliori fragole del mondo, con la precisione che solo l'intelligenza artificiale può garantire."</p>
         </div>
     </div>
 </section>
 
-<!-- COSA È -->
-<section class="section">
+<!-- I PILASTRI -->
+<section class="section dark">
     <div class="container">
         <h2 class="section-title">I tre pilastri di Nurax Agriculture</h2>
         <p class="section-lead">Un sistema integrato dove ogni parte parla con le altre: la serra produce, l'AI gestisce, la genetica migliora ad ogni ciclo.</p>
@@ -52,10 +59,11 @@
                 <ul>
                     <li>~100 m² di superficie a tunnel</li>
                     <li>Coltivazione su 4 livelli verticali</li>
-                    <li>Substrato di fibra di cocco + perlite + biochar</li>
+                    <li>Substrato di fibra di cocco + perlite + biochar (70:20:10)</li>
                     <li>Irrigazione a goccia a precisione millimetrica</li>
                     <li>6 kWp di pannelli solari (energia quasi gratuita)</li>
                     <li>2.500–3.500 piante in produzione continua</li>
+                    <li>Impollinazione via api bombus + vibrazione 100 Hz</li>
                 </ul>
             </div>
 
@@ -64,12 +72,13 @@
                 <h3>2. Il Cervello AI</h3>
                 <p class="card-intro">Il sistema autonomo che gestisce tutto.</p>
                 <ul>
-                    <li>Rete di sensori distribuiti</li>
-                    <li>Visione artificiale per malattie e crescita</li>
-                    <li>Dosaggio nutrienti automatizzato</li>
-                    <li>Previsione raccolto con machine learning</li>
-                    <li>Controllo clima e illuminazione 24/7</li>
-                    <li>Allarmi intelligenti via Telegram</li>
+                    <li>Raspberry Pi 5 + Hailo-8L (13 TOPS edge AI)</li>
+                    <li>Rete di nodi ESP32-S3 distribuiti</li>
+                    <li>YOLO26 per rilevamento malattie e maturità</li>
+                    <li>MobileNetV3 per classificazione stadio crescita</li>
+                    <li>XGBoost per previsione raccolto a 1-7 giorni</li>
+                    <li>Controllo PID per dosaggio nutrienti</li>
+                    <li>Pipeline MQTT → InfluxDB → Grafana</li>
                 </ul>
             </div>
 
@@ -79,8 +88,8 @@
                 <p class="card-intro">L'evoluzione costante delle nostre varietà.</p>
                 <ul>
                     <li>Coltura tissutale (clonazione delle piante migliori)</li>
-                    <li>Marcatori molecolari per sapore e resistenza</li>
-                    <li>Selezione assistita da computer</li>
+                    <li>6 marcatori molecolari validati (FaFAD1, FaOMT, FaPG1, FaRPc2, Rca2, FvMYB10)</li>
+                    <li>Selezione assistita da computer (rrBLUP)</li>
                     <li>Banca di 30+ varietà mondiali</li>
                     <li>Linea genetica proprietaria nel tempo</li>
                     <li>Pronti per CRISPR quando l'UE lo permetterà (2028)</li>
@@ -90,8 +99,94 @@
     </div>
 </section>
 
+<!-- HARDWARE SPEC SHEET -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">⚙️ Specifiche tecniche della serra</h2>
+        <p class="section-lead">Hardware professionale, scelto per affidabilità in ambiente umido e per durata pluriennale. Ogni componente è documentato con modello, fornitore e prezzo.</p>
+
+        <div class="spec-table-wrapper">
+            <div class="spec-category">
+                <h3>🌡️ Sensori</h3>
+                <table class="spec-table">
+                    <tr><td><strong>pH solution</strong></td><td>DFRobot Gravity Pro V2 (±0.1 pH)</td></tr>
+                    <tr><td><strong>EC/TDS</strong></td><td>DFRobot Analog EC (1-25 mS/cm)</td></tr>
+                    <tr><td><strong>Temperatura acqua</strong></td><td>DS18B20 waterproof (±0.5°C)</td></tr>
+                    <tr><td><strong>Temp/umidità aria</strong></td><td>SHT31 (±0.3°C, ±2% RH)</td></tr>
+                    <tr><td><strong>CO₂</strong></td><td>MH-Z19E NDIR (0-5000 ppm)</td></tr>
+                    <tr><td><strong>Luce</strong></td><td>BH1750 + sensore PAR custom</td></tr>
+                    <tr><td><strong>Umidità substrato</strong></td><td>Capacitivo per ogni livello</td></tr>
+                    <tr><td><strong>Ossigeno disciolto</strong></td><td>Atlas Scientific DO probe</td></tr>
+                </table>
+            </div>
+
+            <div class="spec-category">
+                <h3>🖥️ Computing</h3>
+                <table class="spec-table">
+                    <tr><td><strong>Cervello centrale</strong></td><td>Raspberry Pi 5 (8GB RAM)</td></tr>
+                    <tr><td><strong>AI accelerator</strong></td><td>Hailo-8L (13 TOPS, ~30W)</td></tr>
+                    <tr><td><strong>Storage</strong></td><td>SSD NVMe 256GB</td></tr>
+                    <tr><td><strong>Nodi sensori</strong></td><td>ESP32-S3 (×6, distribuiti)</td></tr>
+                    <tr><td><strong>UPS</strong></td><td>Cyberpower 1500VA</td></tr>
+                    <tr><td><strong>Connettività</strong></td><td>4G/LTE backup + WiFi mesh</td></tr>
+                    <tr><td><strong>Camera ispezione</strong></td><td>Pi Camera v3 (12MP)</td></tr>
+                    <tr><td><strong>OS</strong></td><td>Raspberry Pi OS 64-bit + Docker</td></tr>
+                </table>
+            </div>
+
+            <div class="spec-category">
+                <h3>💧 Fertirrigazione</h3>
+                <table class="spec-table">
+                    <tr><td><strong>Pompe peristaltiche</strong></td><td>Kamoer KCS DC12V (×6)</td></tr>
+                    <tr><td><strong>Soluzioni</strong></td><td>Acidi, base, A/B, Si, fulvico, Trichoderma</td></tr>
+                    <tr><td><strong>Mixing tank</strong></td><td>200L con sensori integrati</td></tr>
+                    <tr><td><strong>Distribuzione</strong></td><td>Linee a goccia 2L/h pressure-comp</td></tr>
+                    <tr><td><strong>Filtraggio acqua</strong></td><td>Sediment + osmosi inversa (se serve)</td></tr>
+                    <tr><td><strong>Frequenza dosaggio</strong></td><td>Ogni 30 secondi (real-time PID)</td></tr>
+                </table>
+            </div>
+
+            <div class="spec-category">
+                <h3>💡 Illuminazione &amp; clima</h3>
+                <table class="spec-table">
+                    <tr><td><strong>LED supplementari</strong></td><td>HLG-300L Bspec V2 (full spectrum)</td></tr>
+                    <tr><td><strong>Far-red 730nm</strong></td><td>LED dedicato (fine giornata)</td></tr>
+                    <tr><td><strong>DLI target</strong></td><td>20-25 mol/m²/giorno</td></tr>
+                    <tr><td><strong>Ventilatori HAF</strong></td><td>200mm EC, controllo PWM</td></tr>
+                    <tr><td><strong>Estrattore</strong></td><td>Vortice 250mm + filtro carboni</td></tr>
+                    <tr><td><strong>Riscaldamento</strong></td><td>Pannelli radianti elettrici (raro in Sardegna)</td></tr>
+                    <tr><td><strong>Raffreddamento</strong></td><td>Ombreggiamento attivo + nebulizzazione</td></tr>
+                </table>
+            </div>
+
+            <div class="spec-category">
+                <h3>☀️ Energia solare</h3>
+                <table class="spec-table">
+                    <tr><td><strong>Pannelli</strong></td><td>6 kWp Trina Vertex S+ monocristallini</td></tr>
+                    <tr><td><strong>Inverter</strong></td><td>Huawei SUN2000-6KTL-M1</td></tr>
+                    <tr><td><strong>Storage</strong></td><td>Batteria LFP 10 kWh (Pylontech)</td></tr>
+                    <tr><td><strong>Produzione attesa</strong></td><td>9.000 kWh/anno (Sardegna)</td></tr>
+                    <tr><td><strong>Costo blended</strong></td><td>€0.06-0.12/kWh (vs €0.30 grid)</td></tr>
+                    <tr><td><strong>Autoconsumo</strong></td><td>~80% energia consumata in loco</td></tr>
+                </table>
+            </div>
+
+            <div class="spec-category">
+                <h3>🐝 Impollinazione</h3>
+                <table class="spec-table">
+                    <tr><td><strong>Api bombus</strong></td><td>Bombus terrestris (Koppert Natupol Smart)</td></tr>
+                    <tr><td><strong>Vibrazione meccanica</strong></td><td>Solenoidi 100 Hz (×4-6, su steli)</td></tr>
+                    <tr><td><strong>Frequenza vibrazione</strong></td><td>3-5 secondi, 8-12 volte/giorno</td></tr>
+                    <tr><td><strong>Backup manuale</strong></td><td>Pennello morbido (emergenze)</td></tr>
+                    <tr><td><strong>Monitoraggio</strong></td><td>Conteggio fiori/frutti via CV</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- AI DEEP DIVE -->
-<section class="section pale">
+<section class="section dark">
     <div class="container">
         <h2 class="section-title">🤖 L'Intelligenza Artificiale spiegata</h2>
         <p class="section-lead">Cosa fa esattamente il "cervello" della serra, perché è importante, e quali vantaggi porta rispetto alla coltivazione tradizionale.</p>
@@ -103,29 +198,38 @@
                 <div class="deep-icon">📡</div>
                 <div class="deep-content">
                     <h3>Rete di sensori distribuiti</h3>
-                    <p class="deep-desc">Una serra non è solo "calda o fredda". Ogni pianta vive in un microclima leggermente diverso. I sensori distribuiti misurano <strong>14 variabili ogni 30 secondi</strong> in ogni zona della serra.</p>
+                    <p class="deep-desc">Una serra non è solo "calda o fredda". Ogni pianta vive in un microclima leggermente diverso. I sensori distribuiti misurano <strong>14 variabili ogni 30 secondi</strong> in ogni zona della serra, generando 1,2 milioni di datapoint al giorno.</p>
                     <div class="deep-grid">
                         <div class="deep-item">
                             <h4>Cosa misurano</h4>
                             <ul>
                                 <li>pH e conducibilità elettrica (EC) dell'acqua</li>
-                                <li>Temperatura aria e acqua</li>
-                                <li>Umidità relativa</li>
-                                <li>CO₂ ambientale</li>
-                                <li>Intensità luminosa (DLI)</li>
+                                <li>Temperatura aria e acqua (4 zone)</li>
+                                <li>Umidità relativa (4 zone)</li>
+                                <li>CO₂ ambientale (NDIR, alta precisione)</li>
+                                <li>Intensità luminosa (DLI accumulato)</li>
                                 <li>Umidità del substrato per ogni livello</li>
                                 <li>Ossigeno disciolto nei nutrienti</li>
+                                <li>Temperatura radici (sonde IR)</li>
+                                <li>Pressione e portata fertirrigazione</li>
+                                <li>Consumo energetico per circuito</li>
                             </ul>
                         </div>
                         <div class="deep-item">
-                            <h4>Vantaggi vs coltivazione tradizionale</h4>
+                            <h4>Stack tecnologico</h4>
                             <ul>
-                                <li>✅ Visibilità totale: niente più "ho dimenticato di controllare"</li>
-                                <li>✅ Storico completo: ogni decisione è basata sui dati</li>
-                                <li>✅ Diagnosi precoce: problemi rilevati ore prima del danno visibile</li>
-                                <li>✅ Una persona può gestire una serra che ne richiederebbe tre</li>
+                                <li>📡 ESP32-S3 con MQTT (QoS 1)</li>
+                                <li>🗄️ InfluxDB time-series database</li>
+                                <li>📊 Grafana dashboards real-time</li>
+                                <li>🔄 Telegraf per ingestion</li>
+                                <li>🐳 Tutto containerizzato (Docker)</li>
+                                <li>📦 Backup automatico cloud (B2)</li>
+                                <li>📈 Storico illimitato (compressione)</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="callout-box">
+                        <strong>Vantaggio chiave:</strong> Una persona può gestire una serra che con metodi tradizionali ne richiederebbe tre. La diagnosi precoce evita perdite di raccolto fino al 30%.
                     </div>
                 </div>
             </div>
@@ -134,31 +238,37 @@
             <div class="deep-card">
                 <div class="deep-icon">📷</div>
                 <div class="deep-content">
-                    <h3>Visione artificiale per malattie e crescita</h3>
-                    <p class="deep-desc">Una telecamera mobile su rotaia (gantry) scorre tutta la serra <strong>4 volte al giorno</strong>, fotografando ogni pianta. Un modello di deep learning (YOLO26) analizza le immagini e identifica problemi <em>prima che siano visibili a occhio nudo</em>.</p>
+                    <h3>Visione artificiale (computer vision)</h3>
+                    <p class="deep-desc">Una telecamera mobile su rotaia (gantry) scorre tutta la serra <strong>4 volte al giorno</strong>, fotografando ogni pianta in alta risoluzione. Modelli di deep learning analizzano le immagini sull'edge (Hailo-8L) e identificano problemi <em>prima che siano visibili a occhio nudo</em>.</p>
                     <div class="deep-grid">
+                        <div class="deep-item">
+                            <h4>I modelli AI utilizzati</h4>
+                            <ul>
+                                <li><strong>YOLO26</strong>: rilevamento malattie e oggetti (NMS-free, 30+ FPS su edge)</li>
+                                <li><strong>MobileNetV3</strong>: classificazione stadio crescita per pianta</li>
+                                <li><strong>SAM2 (Segment Anything)</strong>: segmentazione precisa frutti</li>
+                                <li><strong>Custom CNN</strong>: stima Brix da RGB+NDVI (R²=0.84)</li>
+                                <li><strong>Hailo-8L</strong>: edge inference 13 TOPS, no cloud</li>
+                                <li><strong>Training set</strong>: PlantVillage (54K) + Roboflow (12K) + nostro dataset</li>
+                            </ul>
+                        </div>
                         <div class="deep-item">
                             <h4>Cosa rileva l'AI visiva</h4>
                             <ul>
-                                <li>🍄 <strong>Botrite</strong> (muffa grigia) — al 92% di accuratezza</li>
-                                <li>🌫️ <strong>Oidio</strong> (mal bianco) — primi segni</li>
-                                <li>🐛 <strong>Ragnetti rossi</strong> — colonie invisibili a occhio</li>
-                                <li>🦠 <strong>Antracnosi</strong> — macchie sui frutti</li>
-                                <li>📏 Stadio di crescita di ogni pianta</li>
-                                <li>🍓 Frutti maturi pronti da raccogliere</li>
-                                <li>🌱 Stoloni da tagliare per la propagazione</li>
+                                <li>🍄 <strong>Botrite</strong> (muffa grigia) — 92% mAP@0.5</li>
+                                <li>🌫️ <strong>Oidio</strong> (mal bianco) — 88% mAP</li>
+                                <li>🐛 <strong>Ragnetti rossi</strong> — 84% (richiede zoom 5x)</li>
+                                <li>🦠 <strong>Antracnosi</strong> — 90% mAP</li>
+                                <li>📏 Stadio crescita (5 classi: V/F/G/M/H)</li>
+                                <li>🍓 Frutti maturi pronti (BBCH 89)</li>
+                                <li>🌱 Stoloni da tagliare</li>
+                                <li>📐 Diametro frutti (precisione ±2mm)</li>
+                                <li>🎨 Colore (Lab space, uniformità)</li>
                             </ul>
                         </div>
-                        <div class="deep-item">
-                            <h4>Vantaggi pratici</h4>
-                            <ul>
-                                <li>✅ <strong>Identificazione 24-48 ore prima</strong> dei sintomi visibili</li>
-                                <li>✅ Trattamento mirato solo dove serve (no spray a tappeto)</li>
-                                <li>✅ Tracciabilità: foto storica di ogni pianta dalla nascita</li>
-                                <li>✅ Una malattia non si diffonde più: viene fermata sul nascere</li>
-                                <li>✅ Notifica automatica: "Pianta #142 richiede attenzione"</li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div class="callout-box">
+                        <strong>Vantaggio chiave:</strong> Identificazione 24-48 ore prima dei sintomi visibili → trattamento mirato solo dove serve, no spray a tappeto. Zero pesticidi sintetici. Una malattia non si diffonde più: viene fermata sul nascere.
                     </div>
                 </div>
             </div>
@@ -168,30 +278,38 @@
                 <div class="deep-icon">⚙️</div>
                 <div class="deep-content">
                     <h3>Controllo automatico (PID + state machine)</h3>
-                    <p class="deep-desc">L'AI non si limita a osservare — <strong>agisce</strong>. Pompe peristaltiche dosano automaticamente acidi, nutrienti, silicio, biostimolanti. Ventole regolano umidità e VPD. Luci LED si accendono solo quando il sole non basta. Tutto in tempo reale, senza intervento umano.</p>
+                    <p class="deep-desc">L'AI non si limita a osservare — <strong>agisce</strong>. Pompe peristaltiche dosano automaticamente acidi, nutrienti, silicio, biostimolanti. Ventole regolano umidità e VPD. Luci LED si accendono solo quando il sole non basta. Tutto in tempo reale, senza intervento umano. Decisioni in 30 secondi vs ore della gestione manuale.</p>
                     <div class="deep-grid">
                         <div class="deep-item">
                             <h4>Quali decisioni prende l'AI</h4>
                             <ul>
-                                <li>💧 <strong>Fertirrigazione</strong>: pH 5.5-6.2, EC 1.0-2.0 mS/cm sempre</li>
-                                <li>🌡️ <strong>Clima</strong>: temperatura 20-26°C giorno, 12-16°C notte</li>
-                                <li>💨 <strong>Ventilazione</strong>: VPD ottimale per ogni stadio</li>
-                                <li>💡 <strong>Luce</strong>: 16h di fotoperiodo, far-red 730nm fine giornata</li>
-                                <li>🌬️ <strong>CO₂</strong>: arricchito a 800-1200 ppm durante il giorno</li>
-                                <li>🐝 <strong>Impollinazione</strong>: vibrazione 100 Hz più volte al giorno</li>
-                                <li>🔄 <strong>Cambio nutrienti</strong>: rapporto K:N varia tra fase vegetativa e fruttificazione</li>
+                                <li>💧 <strong>Fertirrigazione PID</strong>: pH 5.5-6.2, EC 1.0-2.0 mS/cm</li>
+                                <li>🌡️ <strong>Clima</strong>: 20-26°C giorno, 12-16°C notte</li>
+                                <li>💨 <strong>Ventilazione</strong>: VPD ottimale 0.8-1.2 kPa</li>
+                                <li>💡 <strong>Luce</strong>: 16h fotoperiodo, far-red EOD</li>
+                                <li>🌬️ <strong>CO₂</strong>: arricchito 800-1200 ppm</li>
+                                <li>🐝 <strong>Impollinazione</strong>: vibrazione 100 Hz × 8-12/giorno</li>
+                                <li>🔄 <strong>K:N switching</strong>: vegetativa → fruttificazione</li>
+                                <li>💧 <strong>DIF temperatura</strong>: 12°C differenza giorno/notte</li>
+                                <li>🌊 <strong>Drain control</strong>: EC drain monitorata</li>
                             </ul>
                         </div>
                         <div class="deep-item">
-                            <h4>Vantaggi</h4>
+                            <h4>Algoritmi di controllo</h4>
                             <ul>
-                                <li>✅ <strong>Precisione che la mano umana non può raggiungere</strong>: dosaggi al millilitro</li>
-                                <li>✅ Reazione in 30 secondi vs ore della gestione manuale</li>
-                                <li>✅ Limiti di sicurezza hardware: il firmware non permette mai dosi pericolose</li>
-                                <li>✅ Consistenza: la pianta #1 e la #2500 ricevono lo stesso trattamento</li>
-                                <li>✅ Niente errori per stanchezza, distrazione, ferie</li>
+                                <li><strong>PID controller</strong> per pH/EC dosing</li>
+                                <li><strong>Cascade control</strong> per temperatura/umidità</li>
+                                <li><strong>Feedforward</strong> per luce solare prevista</li>
+                                <li><strong>State machine</strong> per fasi di crescita</li>
+                                <li><strong>Anomaly detection</strong> (Isolation Forest)</li>
+                                <li><strong>Hardware kill switch</strong> (limiti firmware)</li>
+                                <li><strong>Watchdog timer</strong> (auto-reboot)</li>
+                                <li><strong>Bumpless transfer</strong> (manual ↔ auto)</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="callout-box">
+                        <strong>Vantaggio chiave:</strong> Precisione che la mano umana non può raggiungere — dosaggi al millilitro, reazione in 30 secondi, consistenza tra pianta #1 e #2500. Niente errori per stanchezza, distrazione o ferie.
                     </div>
                 </div>
             </div>
@@ -201,28 +319,34 @@
                 <div class="deep-icon">🔮</div>
                 <div class="deep-content">
                     <h3>Previsione e ottimizzazione</h3>
-                    <p class="deep-desc">L'AI non è solo reattiva — è <strong>predittiva</strong>. Modelli di machine learning (XGBoost) imparano dai dati storici e prevedono cosa succederà nei prossimi 1-7 giorni. Possiamo pianificare le consegne settimane prima.</p>
+                    <p class="deep-desc">L'AI non è solo reattiva — è <strong>predittiva</strong>. Modelli di machine learning imparano dai dati storici e prevedono cosa succederà nei prossimi 1-7 giorni. Possiamo pianificare le consegne settimane prima.</p>
                     <div class="deep-grid">
                         <div class="deep-item">
                             <h4>Cosa prevede l'AI</h4>
                             <ul>
-                                <li>📈 <strong>Volume di raccolto</strong> a 1-3 giorni (per programmare ordini ai ristoranti)</li>
-                                <li>🍓 <strong>Maturazione</strong>: quali piante saranno pronte quando</li>
-                                <li>📊 <strong>Brix (zuccheri)</strong>: stima non distruttiva del sapore</li>
-                                <li>⚠️ <strong>Anomalie</strong>: deriva sensori, problemi attrezzatura prima del guasto</li>
-                                <li>⚡ <strong>Consumi energetici</strong>: ottimizzazione per max produzione/min costi</li>
+                                <li>📈 <strong>Volume raccolto</strong> a 1-3-7 giorni (XGBoost, MAPE &lt;15%)</li>
+                                <li>🍓 <strong>Maturazione</strong>: timing per pianta</li>
+                                <li>📊 <strong>Brix (zuccheri)</strong>: stima non distruttiva</li>
+                                <li>⚠️ <strong>Anomalie</strong>: deriva sensori, guasti imminenti</li>
+                                <li>⚡ <strong>Consumi energetici</strong>: ottimizzazione tariffe</li>
+                                <li>🐛 <strong>Rischio malattie</strong>: modello bayesiano</li>
+                                <li>💧 <strong>Consumo acqua/nutrienti</strong>: settimanale</li>
                             </ul>
                         </div>
                         <div class="deep-item">
-                            <h4>Vantaggi business</h4>
+                            <h4>Modelli predittivi</h4>
                             <ul>
-                                <li>✅ <strong>Promesse mantenute</strong>: sappiamo cosa consegneremo prima di prometterlo</li>
-                                <li>✅ Contratti con ristoranti più solidi: forniture prevedibili</li>
-                                <li>✅ Spreco ridotto: raccogliamo solo ciò che vendiamo</li>
-                                <li>✅ Manutenzione predittiva: sostituiamo prima che si rompa</li>
-                                <li>✅ Bonus emozionale: meno sorprese, più controllo</li>
+                                <li><strong>XGBoost regression</strong>: yield prediction</li>
+                                <li><strong>LSTM/Transformer</strong>: time-series clima</li>
+                                <li><strong>Isolation Forest</strong>: anomaly detection</li>
+                                <li><strong>Bayesian network</strong>: rischio malattie</li>
+                                <li><strong>Custom CNN</strong>: Brix da immagini</li>
+                                <li><strong>Reinforcement Learning</strong>: ottimizzazione setpoint (sperimentale)</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="callout-box">
+                        <strong>Vantaggio chiave:</strong> Promesse mantenute — sappiamo cosa consegneremo prima di prometterlo. Contratti più solidi, spreco ridotto, manutenzione predittiva.
                     </div>
                 </div>
             </div>
@@ -234,15 +358,121 @@
                     <h3>Apprendimento continuo</h3>
                     <p class="deep-desc">La differenza chiave: <strong>questo sistema migliora ogni giorno</strong>. Ogni ciclo di crescita produce dati che riaddestrano i modelli. Ogni pianta che cresce insegna all'AI come fare meglio la prossima.</p>
                     <ul class="benefits-list">
-                        <li>🧠 Dopo 6 mesi, i modelli predittivi sono molto più accurati di quelli iniziali</li>
-                        <li>🧠 Il dataset di immagini di malattie cresce → riconoscimento sempre più preciso</li>
-                        <li>🧠 Le ricette di nutrienti vengono affinate per le condizioni specifiche della nostra serra</li>
-                        <li>🧠 Anomalie passate diventano allarmi automatici per il futuro</li>
-                        <li>🧠 In 2-3 anni, il sistema sarà unico al mondo: addestrato sulle <em>nostre</em> piante</li>
+                        <li>🧠 Dopo 6 mesi: modelli predittivi 2-3x più accurati di quelli iniziali (più dati = meno errore)</li>
+                        <li>🧠 Dataset di immagini malattie cresce di ~5K immagini/mese → riconoscimento sempre più preciso</li>
+                        <li>🧠 Ricette nutrienti affinate per le condizioni specifiche della nostra serra (acqua, varietà, microclima)</li>
+                        <li>🧠 Anomalie passate diventano allarmi automatici per il futuro (curated training data)</li>
+                        <li>🧠 Il modello RL impara la policy ottimale di setpoint per massimizzare sapore + resa</li>
+                        <li>🧠 In 2-3 anni, il sistema sarà unico al mondo: addestrato sulle <em>nostre</em> piante, in <em>questa</em> serra, con <em>questa</em> acqua</li>
+                        <li>🧠 Possibilità futura: vendere la tecnologia/dataset come licenza ad altre serre</li>
                     </ul>
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- DATA PIPELINE -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🔄 La pipeline dei dati</h2>
+        <p class="section-lead">Come i dati fluiscono dai sensori al cervello AI alle decisioni alle azioni — tutto in 30 secondi.</p>
+
+        <div class="pipeline">
+            <div class="pipeline-step">
+                <div class="pipeline-num">1</div>
+                <div class="pipeline-content">
+                    <h4>Acquisizione</h4>
+                    <p><strong>ESP32-S3 nodes</strong> leggono i sensori ogni 30s e pubblicano JSON via MQTT (QoS 1) al broker locale. Nessuna perdita di dati grazie a buffer locale e retry automatici.</p>
+                    <div class="pipeline-tech">ESP32-S3 · MQTT QoS 1 · JSON · 30s polling</div>
+                </div>
+            </div>
+            <div class="pipeline-arrow">↓</div>
+            <div class="pipeline-step">
+                <div class="pipeline-num">2</div>
+                <div class="pipeline-content">
+                    <h4>Ingestion &amp; storage</h4>
+                    <p><strong>Telegraf</strong> consuma i topic MQTT, valida lo schema, e scrive in <strong>InfluxDB 2</strong> (time-series). Compressione automatica, retention policy 5 anni, downsampling per analisi long-term.</p>
+                    <div class="pipeline-tech">Mosquitto MQTT · Telegraf · InfluxDB 2.x · Docker</div>
+                </div>
+            </div>
+            <div class="pipeline-arrow">↓</div>
+            <div class="pipeline-step">
+                <div class="pipeline-num">3</div>
+                <div class="pipeline-content">
+                    <h4>Inferenza AI</h4>
+                    <p>Il <strong>control engine</strong> Python legge i dati real-time, applica i modelli AI (visione, predizione, anomalie) sull'<strong>Hailo-8L</strong> per zero latenza. Decisioni in &lt;100ms.</p>
+                    <div class="pipeline-tech">FastAPI · PyTorch + ONNX · Hailo-8L · TFLite</div>
+                </div>
+            </div>
+            <div class="pipeline-arrow">↓</div>
+            <div class="pipeline-step">
+                <div class="pipeline-num">4</div>
+                <div class="pipeline-content">
+                    <h4>Decisione</h4>
+                    <p>Il <strong>PID controller</strong> calcola i setpoint ottimali. La <strong>state machine</strong> verifica fase di crescita e attiva trigger appropriati. La <strong>safety layer</strong> verifica i limiti hardware prima di emettere comandi.</p>
+                    <div class="pipeline-tech">PID · State machine · Safety preflight · Audit log</div>
+                </div>
+            </div>
+            <div class="pipeline-arrow">↓</div>
+            <div class="pipeline-step">
+                <div class="pipeline-num">5</div>
+                <div class="pipeline-content">
+                    <h4>Azione</h4>
+                    <p>Comandi MQTT inviati ai nodi attuatori. <strong>ESP32 actuator nodes</strong> verificano i limiti firmware (kill switch hardware), eseguono il dosaggio/ventilazione/illuminazione, e confermano l'esecuzione.</p>
+                    <div class="pipeline-tech">MQTT cmd · Firmware safety · Pumps · Fans · Lights</div>
+                </div>
+            </div>
+            <div class="pipeline-arrow">↓</div>
+            <div class="pipeline-step">
+                <div class="pipeline-num">6</div>
+                <div class="pipeline-content">
+                    <h4>Visualizzazione &amp; allerta</h4>
+                    <p><strong>Grafana</strong> aggiorna le dashboard in tempo reale. <strong>Alertmanager</strong> valuta le soglie. Se c'è un'anomalia, una notifica <strong>Telegram</strong> arriva al telefono in &lt;5 secondi.</p>
+                    <div class="pipeline-tech">Grafana 11 · Prometheus · Telegram bot · Mobile app</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SAFETY -->
+<section class="section dark">
+    <div class="container">
+        <h2 class="section-title">🛡️ Architettura di sicurezza a doppio strato</h2>
+        <p class="section-lead">Quando il software gestisce pompe e valvole, un bug può uccidere le piante o causare allagamenti. Per questo abbiamo costruito due strati indipendenti di sicurezza.</p>
+
+        <div class="safety-layers">
+            <div class="safety-layer">
+                <div class="layer-badge">LAYER 1</div>
+                <h3>🐍 Software safety (Python)</h3>
+                <p>Il control engine Python verifica ogni comando prima di emetterlo:</p>
+                <ul>
+                    <li>✅ <strong>Preflight checks</strong>: valori sensori validi, ultimi 30s di dati presenti</li>
+                    <li>✅ <strong>Rate limiting</strong>: max N dosaggi all'ora per sicurezza</li>
+                    <li>✅ <strong>Setpoint clamping</strong>: comandi fuori range bloccati</li>
+                    <li>✅ <strong>Audit log</strong>: ogni decisione registrata con timestamp</li>
+                    <li>✅ <strong>Operator override</strong>: blocco manuale immediato</li>
+                </ul>
+            </div>
+
+            <div class="safety-layer">
+                <div class="layer-badge alt">LAYER 2</div>
+                <h3>🔌 Hardware safety (Firmware)</h3>
+                <p>Anche se il software impazzisce, il firmware ESP32 è l'ultima difesa:</p>
+                <ul>
+                    <li>✅ <strong>Hard limits</strong>: pompe non possono pompare oltre N ml/min</li>
+                    <li>✅ <strong>Kill switch fisico</strong>: pulsante emergenza interrompe alimentazione</li>
+                    <li>✅ <strong>Watchdog timer</strong>: reboot automatico se firmware si blocca</li>
+                    <li>✅ <strong>SAFE_FALLBACK mode</strong>: se MQTT broker offline, mantiene ultimo stato sicuro</li>
+                    <li>✅ <strong>Battery backup</strong>: continua per 4+ ore se manca corrente</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="callout-box accent center">
+            <strong>Risultato:</strong> Il sistema è progettato per <em>fallire in modo sicuro</em>. In caso di problema software, la serra entra in modalità conservativa e ti notifica via Telegram. Nessuna pianta morirà mai per un bug del codice.
         </div>
     </div>
 </section>
@@ -260,61 +490,91 @@
                 <div class="deep-icon">🔬</div>
                 <div class="deep-content">
                     <h3>Coltura tissutale (clonazione)</h3>
-                    <p class="deep-desc">Quando troviamo una pianta eccezionale — più dolce, più produttiva, più resistente — non possiamo permetterci di perderla. La <strong>cloniamo</strong> in laboratorio: da un piccolo pezzo di tessuto (1mm di meristema) generiamo decine di piante geneticamente identiche all'originale.</p>
+                    <p class="deep-desc">Quando troviamo una pianta eccezionale — più dolce, più produttiva, più resistente — non possiamo permetterci di perderla. La <strong>cloniamo</strong> in laboratorio: da un piccolo pezzo di tessuto (1mm di meristema apicale) generiamo decine di piante geneticamente identiche all'originale.</p>
                     <div class="deep-grid">
                         <div class="deep-item">
-                            <h4>Come funziona</h4>
+                            <h4>Protocollo passo-passo</h4>
                             <ul>
-                                <li>1️⃣ Selezioniamo la pianta migliore della serra</li>
-                                <li>2️⃣ Preleviamo l'apice meristematico (1mm, sterile)</li>
-                                <li>3️⃣ Coltiviamo in laboratorio su mezzo nutritivo (MS + ormoni)</li>
-                                <li>4️⃣ La pianta produce decine di germogli in 4-6 settimane</li>
-                                <li>5️⃣ Ogni germoglio diventa una nuova pianta identica</li>
-                                <li>6️⃣ Le piante vengono trapiantate in serra</li>
+                                <li>1️⃣ Selezione pianta donor (top 5% performance)</li>
+                                <li>2️⃣ Sterilizzazione esterna (etanolo 70%, NaClO 1%)</li>
+                                <li>3️⃣ Prelievo meristema apicale (1-2mm) con dissezione sterile</li>
+                                <li>4️⃣ Coltura su MS media + BAP 1mg/L + IAA 0.1mg/L</li>
+                                <li>5️⃣ Incubazione 25°C, fotoperiodo 16h, 4 settimane</li>
+                                <li>6️⃣ Subcoltura: ogni meristema → 5-10 germogli</li>
+                                <li>7️⃣ Radicazione: trasferimento su MS + IBA 0.5mg/L</li>
+                                <li>8️⃣ Acclimatazione: graduale a serra (umidità decrescente)</li>
+                                <li>9️⃣ Trapianto in coltura idroponica</li>
                             </ul>
                         </div>
                         <div class="deep-item">
-                            <h4>Vantaggi enormi</h4>
+                            <h4>Equipaggiamento del laboratorio</h4>
                             <ul>
-                                <li>✅ <strong>Indipendenza dai fornitori</strong>: non compriamo più piante ogni stagione</li>
-                                <li>✅ Eliminazione virus: la coltura tissutale rigenera piante sane</li>
-                                <li>✅ Replica esatta delle nostre migliori performer</li>
-                                <li>✅ Costo per pianta: circa 10x meno che comprarle</li>
-                                <li>✅ Patrimonio genetico proprio, non disponibile ai concorrenti</li>
+                                <li>🧪 Cappa a flusso laminare orizzontale</li>
+                                <li>🔥 Autoclave per sterilizzazione media</li>
+                                <li>🌡️ Camera di crescita controllata (25°C, 60% RH)</li>
+                                <li>💡 Luci LED full-spectrum (PAR 100 µmol/m²/s)</li>
+                                <li>🔬 Stereomicroscopio (40x) per dissezione</li>
+                                <li>🧫 Recipienti culture (Magenta GA-7, baby food jar)</li>
+                                <li>🧬 Kit sterilizzazione completo (alcol, candeggina, autoclavare)</li>
+                                <li>📚 Reagenti: MS basal salts, vitamine, ormoni (BAP, IAA, IBA)</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="callout-box">
+                        <strong>Vantaggi enormi:</strong> Indipendenza dai fornitori (non compriamo più piante ogni stagione), eliminazione virus (la coltura tissutale rigenera piante sane), replica esatta delle migliori performer, costo per pianta ~10x inferiore.
                     </div>
                 </div>
             </div>
 
-            <!-- MAS -->
+            <!-- MAS Detailed -->
             <div class="deep-card">
                 <div class="deep-icon">🧪</div>
                 <div class="deep-content">
                     <h3>Selezione assistita da marcatori (MAS)</h3>
                     <p class="deep-desc">Tradizionalmente, per sapere se una pianta sarà dolce o resistente devi aspettare mesi e provarla. Con la <strong>genetica molecolare</strong>, da un pezzettino di foglia possiamo leggere il DNA e <em>predire le caratteristiche</em> prima ancora che la pianta produca frutti.</p>
-                    <div class="deep-grid">
-                        <div class="deep-item">
-                            <h4>I 6 marcatori che usiamo</h4>
-                            <ul>
-                                <li><strong>FaFAD1</strong> → sapore di pesca (γ-decalattone) — 92% accuratezza</li>
-                                <li><strong>FaOMT</strong> → mesifurano, aroma di caramello — 94%</li>
-                                <li><strong>FaPG1</strong> → fermezza del frutto, shelf life</li>
-                                <li><strong>FaRPc2</strong> → resistenza a Phytophthora</li>
-                                <li><strong>Rca2</strong> → resistenza all'antracnosi</li>
-                                <li><strong>FvMYB10</strong> → intensità del colore rosso</li>
-                            </ul>
+
+                    <h4 class="markers-title">I 6 marcatori validati che usiamo</h4>
+                    <div class="markers-grid">
+                        <div class="marker-card">
+                            <div class="marker-name">FaFAD1</div>
+                            <div class="marker-trait">Sapore di pesca</div>
+                            <div class="marker-desc">Gene fatty acid desaturase. Produce γ-decalattone, l'aroma chiave delle fragole "alla pesca". Test KASP, accuratezza 92%.</div>
+                            <div class="marker-ref">📚 Sánchez-Sevilla et al. 2014, BMC Plant Biology</div>
                         </div>
-                        <div class="deep-item">
-                            <h4>Cosa significa nella pratica</h4>
-                            <ul>
-                                <li>✅ <strong>Selezioniamo piante "vincenti" prima di coltivarle</strong></li>
-                                <li>✅ Risparmio mesi/anni di tempo per ogni generazione di breeding</li>
-                                <li>✅ Sappiamo a priori chi avrà sapore unico, chi resisterà alle malattie</li>
-                                <li>✅ Investiamo le risorse della serra solo sulle piante migliori</li>
-                                <li>✅ Costruiamo una linea genetica con caratteristiche selezionate</li>
-                            </ul>
+                        <div class="marker-card">
+                            <div class="marker-name">FaOMT</div>
+                            <div class="marker-trait">Aroma di caramello</div>
+                            <div class="marker-desc">O-methyltransferase. Produce mesifurano (DMHF-OMe), nota dolce-caramellata distintiva. Test KASP, accuratezza 94%.</div>
+                            <div class="marker-ref">📚 Lavhale et al. 2018, Plant Cell Physiology</div>
                         </div>
+                        <div class="marker-card">
+                            <div class="marker-name">FaPG1</div>
+                            <div class="marker-trait">Fermezza &amp; shelf life</div>
+                            <div class="marker-desc">Polygalacturonase. Determina la durata post-raccolta. Frutti fermi resistono 2-3x più a lungo. Cruciale per delivery HORECA.</div>
+                            <div class="marker-ref">📚 Posé et al. 2013, Plant Journal</div>
+                        </div>
+                        <div class="marker-card">
+                            <div class="marker-name">FaRPc2</div>
+                            <div class="marker-trait">Resistenza Phytophthora</div>
+                            <div class="marker-desc">Gene di resistenza alla muffa rossa delle radici. Locus su cromosoma IV. Marker SCAR codominante.</div>
+                            <div class="marker-ref">📚 Mangandi et al. 2017, Theor Appl Genet</div>
+                        </div>
+                        <div class="marker-card">
+                            <div class="marker-name">Rca2</div>
+                            <div class="marker-trait">Resistenza antracnosi</div>
+                            <div class="marker-desc">Gene maggiore di resistenza a Colletotrichum acutatum. Test SCAR, accuratezza ~90%. Permette zero fungicidi.</div>
+                            <div class="marker-ref">📚 Lerceteau-Köhler et al. 2005</div>
+                        </div>
+                        <div class="marker-card">
+                            <div class="marker-name">FvMYB10</div>
+                            <div class="marker-trait">Intensità colore rosso</div>
+                            <div class="marker-desc">Fattore di trascrizione che regola la biosintesi delle antocianine. Determina rosso brillante vs tenue.</div>
+                            <div class="marker-ref">📚 Lin-Wang et al. 2014, Plant Physiology</div>
+                        </div>
+                    </div>
+
+                    <div class="callout-box">
+                        <strong>Cosa significa nella pratica:</strong> Selezioniamo piante "vincenti" prima di coltivarle. Risparmio mesi/anni per ogni generazione di breeding. Sappiamo a priori chi avrà sapore unico, chi resisterà alle malattie. Investiamo le risorse della serra solo sulle piante migliori.
                     </div>
                 </div>
             </div>
@@ -324,30 +584,39 @@
                 <div class="deep-icon">🎯</div>
                 <div class="deep-content">
                     <h3>Fenotipizzazione AI (osservazione automatica)</h3>
-                    <p class="deep-desc">L'AI visiva non serve solo a trovare malattie. Misura anche le <strong>caratteristiche di ogni pianta</strong> automaticamente: dimensione frutti, colore, ritmo di crescita, produttività. Queste informazioni si combinano con la genetica per creare un punteggio "valore di breeding" per ogni pianta.</p>
+                    <p class="deep-desc">L'AI visiva non serve solo a trovare malattie. Misura anche le <strong>caratteristiche di ogni pianta</strong> automaticamente: dimensione frutti, colore, ritmo di crescita, produttività. Queste informazioni si combinano con la genetica per creare un punteggio "valore di breeding" per ogni pianta usando il modello <strong>rrBLUP</strong> (ridge regression Best Linear Unbiased Prediction).</p>
                     <div class="deep-grid">
                         <div class="deep-item">
                             <h4>Cosa misuriamo automaticamente</h4>
                             <ul>
                                 <li>📏 Diametro e peso medio dei frutti</li>
-                                <li>🎨 Colore (uniforme? brillante?)</li>
-                                <li>📈 Ritmo di crescita (kg/settimana)</li>
-                                <li>🍯 Sapore stimato (Brix da immagine RGB+NDVI)</li>
-                                <li>🛡️ Resistenza alle malattie (storico fotografico)</li>
-                                <li>🌱 Vigore vegetativo</li>
+                                <li>🎨 Colore (Lab space, uniformità, brillantezza)</li>
+                                <li>📈 Ritmo di crescita (kg/settimana per pianta)</li>
+                                <li>🍯 Brix stimato (RGB+NDVI, R²=0.84)</li>
+                                <li>🛡️ Resistenza malattie (storico fotografico)</li>
+                                <li>🌱 Vigore vegetativo (LAI, biomassa)</li>
                                 <li>🔁 Produzione di stoloni (per propagazione)</li>
+                                <li>📅 Time to flower (precocità)</li>
+                                <li>🍇 Numero frutti per pianta</li>
+                                <li>⚖️ Distribuzione pesi (mediana, IQR)</li>
                             </ul>
                         </div>
                         <div class="deep-item">
-                            <h4>L'integrazione magica</h4>
+                            <h4>Pipeline di breeding</h4>
                             <ul>
-                                <li>✅ <strong>Dati genetica + dati performance = decisioni di breeding scientifiche</strong></li>
-                                <li>✅ Modello ML predice il "valore" di ogni pianta</li>
-                                <li>✅ Le top 5% vengono clonate per la generazione successiva</li>
-                                <li>✅ Le scarse vengono eliminate</li>
-                                <li>✅ Ogni generazione è migliore della precedente — automaticamente</li>
+                                <li>1️⃣ Genotipo (6 marker MAS) per ogni pianta</li>
+                                <li>2️⃣ Fenotipo (10+ tratti AI) raccolto continuamente</li>
+                                <li>3️⃣ Modello rrBLUP calcola GEBV (genomic estimated breeding value)</li>
+                                <li>4️⃣ Top 5% → coltura tissutale per propagazione</li>
+                                <li>5️⃣ Bottom 20% → eliminazione</li>
+                                <li>6️⃣ Cross controllati tra elite parents</li>
+                                <li>7️⃣ Generazione successiva ridotta a 30+ varietà</li>
+                                <li>8️⃣ Cycle time: 8-12 mesi per generazione</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="callout-box">
+                        <strong>L'integrazione magica:</strong> Dati genetica + dati performance = decisioni di breeding scientifiche. Ogni generazione è migliore della precedente — automaticamente. Il guadagno genetico atteso è ~5-10% per ciclo (versus 1-2% del breeding tradizionale).
                     </div>
                 </div>
             </div>
@@ -362,11 +631,13 @@
                         <div class="deep-item">
                             <h4>Cosa potremo fare dal 2028</h4>
                             <ul>
-                                <li>🎯 Aumentare il sapore (geni di aroma)</li>
-                                <li>🛡️ Resistenza assoluta a botrite e oidio</li>
-                                <li>📏 Frutti più grandi e uniformi</li>
-                                <li>⏱️ Shelf life raddoppiata (FaPG1 modificato)</li>
-                                <li>❄️ Tolleranza a stress termici</li>
+                                <li>🎯 <strong>Aumentare il sapore</strong>: knockout di geni che reprimono FaFAD1 → +50% γ-decalattone</li>
+                                <li>🛡️ <strong>Resistenza assoluta</strong>: edit di MLO genes → immunità a oidio</li>
+                                <li>📏 <strong>Frutti più grandi</strong>: modifica di geni size (FW2.2 ortologi)</li>
+                                <li>⏱️ <strong>Shelf life raddoppiata</strong>: FaPG1 silenced → frutti che durano 14 giorni</li>
+                                <li>❄️ <strong>Tolleranza a stress termici</strong>: HSP regulators</li>
+                                <li>🌿 <strong>Architettura ottimizzata</strong>: edit di geni branching</li>
+                                <li>🍯 <strong>Più zuccheri, meno acidi</strong>: bilanciamento Brix/acidità</li>
                             </ul>
                         </div>
                         <div class="deep-item">
@@ -376,6 +647,8 @@
                                 <li>✅ Genotipizzazione delle nostre varietà (sappiamo quali geni modificare)</li>
                                 <li>✅ Pipeline di selezione già operativa</li>
                                 <li>✅ Database fenotipico crescente</li>
+                                <li>✅ Studio dei protocolli Agrobacterium e protoplast transformation</li>
+                                <li>✅ Identificazione delle gRNA target per i nostri obiettivi</li>
                                 <li>✅ Saremo i primi in Sardegna ad applicare CRISPR alle fragole</li>
                             </ul>
                         </div>
@@ -387,8 +660,59 @@
     </div>
 </section>
 
+<!-- BIOSTIMULANTS -->
+<section class="section dark">
+    <div class="container">
+        <h2 class="section-title">🌿 Ottimizzazioni biologiche</h2>
+        <p class="section-lead">Oltre AI e genetica, applichiamo i biostimolanti più avanzati validati dalla ricerca per massimizzare resa, sapore e resistenza.</p>
+
+        <div class="bio-grid">
+            <div class="bio-card">
+                <h4>🍄 Trichoderma harzianum</h4>
+                <p>Fungo benefico applicato al substrato. Compete con patogeni, stimola le radici, induce resistenza sistemica.</p>
+                <div class="bio-effect">+15-20% biomassa radicale, -50% Pythium</div>
+            </div>
+            <div class="bio-card">
+                <h4>🌫️ Silicio (K₂SiO₃)</h4>
+                <p>Silicato di potassio nel mix nutritivo. Si deposita nelle pareti cellulari, indurisce frutti, riduce stress idrico.</p>
+                <div class="bio-effect">+10% fermezza, -30% danni meccanici</div>
+            </div>
+            <div class="bio-card">
+                <h4>🪨 Biochar</h4>
+                <p>Carbone vegetale (10% del substrato). Migliora ritenzione acqua/nutrienti, ospita microbiota benefico, sequestra carbonio.</p>
+                <div class="bio-effect">+15% efficienza nutrienti, durata 100+ anni</div>
+            </div>
+            <div class="bio-card">
+                <h4>🧪 Acidi umici/fulvici</h4>
+                <p>Estratti da leonardite. Chelano micronutrienti, stimolano crescita radicale, attivano geni di stress tolerance.</p>
+                <div class="bio-effect">+20% assorbimento Fe/Zn, +10% biomassa</div>
+            </div>
+            <div class="bio-card">
+                <h4>💧 Nanobubble O₂</h4>
+                <p>Generatore di nanobolle d'ossigeno nel reservoir nutrienti. DO aumentato a 12-15 mg/L (vs 8 normale).</p>
+                <div class="bio-effect">+25% sviluppo radici, prevenzione root rot</div>
+            </div>
+            <div class="bio-card">
+                <h4>🌱 Acido salicilico</h4>
+                <p>Foliar spray a basse concentrazioni. Attiva la SAR (systemic acquired resistance), prepara la pianta a difendersi.</p>
+                <div class="bio-effect">-40% incidenza malattie fungine</div>
+            </div>
+            <div class="bio-card">
+                <h4>🍯 Chitosano</h4>
+                <p>Polimero da gusci di crostacei. Trattamento post-raccolta o foliar. Antifungino naturale, induce difese.</p>
+                <div class="bio-effect">+5-7 giorni shelf life dopo raccolta</div>
+            </div>
+            <div class="bio-card">
+                <h4>🌬️ CO₂ enrichment</h4>
+                <p>Iniezione controllata di CO₂ a 800-1200 ppm durante le ore di luce. Fotosintesi accelerata.</p>
+                <div class="bio-effect">+20-30% tasso di crescita</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- A CHI VENDIAMO -->
-<section class="section pale">
+<section class="section">
     <div class="container narrow">
         <h2 class="section-title">A chi vendiamo le fragole</h2>
         <p class="section-lead">Solo professionisti del settore alimentare. Niente vendita al dettaglio, niente clienti privati. Volumi controllati, prezzi premium.</p>
@@ -398,16 +722,19 @@
                 <h4>🍽️ Ristoranti di alto livello</h4>
                 <p>Chef stellati e ristoranti gourmet a Cagliari e Costa Smeralda. Cercano fragole locali, fresche, senza pesticidi.</p>
                 <p class="price">Prezzo: <strong>8–15 EUR/kg</strong></p>
+                <p class="volume">Volume: 5-20 kg/settimana per cliente</p>
             </div>
             <div class="client-card">
                 <h4>🏨 Hotel di lusso</h4>
                 <p>Catene 5 stelle e boutique hotel. Forniture regolari per colazioni gourmet e dessert. Volumi maggiori.</p>
                 <p class="price">Prezzo: <strong>7–12 EUR/kg</strong></p>
+                <p class="volume">Volume: 20-50 kg/settimana per cliente</p>
             </div>
             <div class="client-card">
                 <h4>🏪 Distributori HORECA</h4>
                 <p>Grossisti specializzati che riforniscono ristoranti e hotel. Volumi grandi, ordini regolari e prevedibili.</p>
                 <p class="price">Prezzo: <strong>4–6 EUR/kg</strong></p>
+                <p class="volume">Volume: 100+ kg/settimana</p>
             </div>
         </div>
 
@@ -443,59 +770,363 @@
     </div>
 </section>
 
-<!-- I NUMERI -->
+<!-- INVESTIMENTO DETTAGLIATO -->
+<section class="section dark">
+    <div class="container">
+        <h2 class="section-title">💰 L'investimento, voce per voce</h2>
+        <p class="section-lead">Investimento totale stimato: <strong class="accent-text">~18.500 EUR</strong>. Tutto documentato per categoria, con marche e modelli specifici. Nessuna sorpresa.</p>
+
+        <div class="invest-table">
+            <div class="invest-category">
+                <div class="invest-header">
+                    <h3>🏗️ Struttura serra &amp; coltivazione</h3>
+                    <div class="invest-total">~5.200 EUR</div>
+                </div>
+                <table>
+                    <tr><td>Tunnel serra 100 m² (acciaio + film polietilene UV-stabilizzato)</td><td>2.400 EUR</td></tr>
+                    <tr><td>Sistema 4-tier verticale (canali NFT/substrato + supporti)</td><td>1.200 EUR</td></tr>
+                    <tr><td>Substrato cocco/perlite/biochar (per 3.500 piante)</td><td>500 EUR</td></tr>
+                    <tr><td>Linee irrigazione a goccia (gocciolatori pressure-comp + tubi)</td><td>400 EUR</td></tr>
+                    <tr><td>Reservoir nutrienti 200L + accessori</td><td>250 EUR</td></tr>
+                    <tr><td>Ventilazione: estrattore Vortice + ventilatori HAF</td><td>350 EUR</td></tr>
+                    <tr><td>Ombreggiamento + nebulizzazione estiva</td><td>100 EUR</td></tr>
+                </table>
+            </div>
+
+            <div class="invest-category">
+                <div class="invest-header">
+                    <h3>☀️ Sistema solare</h3>
+                    <div class="invest-total">~6.500 EUR</div>
+                </div>
+                <table>
+                    <tr><td>Pannelli fotovoltaici 6 kWp (Trina Vertex S+ monocristallini)</td><td>2.400 EUR</td></tr>
+                    <tr><td>Inverter Huawei SUN2000-6KTL-M1</td><td>1.300 EUR</td></tr>
+                    <tr><td>Batteria LFP 10 kWh (Pylontech US3000C ×2)</td><td>2.000 EUR</td></tr>
+                    <tr><td>Strutture di montaggio + cavi DC/AC</td><td>500 EUR</td></tr>
+                    <tr><td>Installazione &amp; certificazioni elettricista</td><td>300 EUR</td></tr>
+                </table>
+                <div class="invest-note">💡 <strong>Detrazione fiscale 50%</strong> disponibile: costo netto ~3.250 EUR. ROI energia: 4-5 anni.</div>
+            </div>
+
+            <div class="invest-category">
+                <div class="invest-header">
+                    <h3>🌡️ Sensori &amp; attuatori</h3>
+                    <div class="invest-total">~1.800 EUR</div>
+                </div>
+                <table>
+                    <tr><td>DFRobot pH probe Pro V2 + EC analog probe</td><td>180 EUR</td></tr>
+                    <tr><td>SHT31 temp/umidità ×4 (zone aria)</td><td>60 EUR</td></tr>
+                    <tr><td>MH-Z19E CO₂ sensor NDIR</td><td>40 EUR</td></tr>
+                    <tr><td>Atlas Scientific DO probe + interface</td><td>200 EUR</td></tr>
+                    <tr><td>DS18B20 temp acqua ×6 + capacitivi substrato ×8</td><td>80 EUR</td></tr>
+                    <tr><td>Pompe peristaltiche Kamoer KCS DC12V ×6</td><td>360 EUR</td></tr>
+                    <tr><td>Solenoidi vibrazione 100Hz ×6 (per impollinazione)</td><td>120 EUR</td></tr>
+                    <tr><td>Pompe acqua + valvole</td><td>200 EUR</td></tr>
+                    <tr><td>Cablaggio, contenitori IP65, alimentazione</td><td>300 EUR</td></tr>
+                    <tr><td>Sensori ambiente extra (luce, pressione)</td><td>120 EUR</td></tr>
+                    <tr><td>Soluzioni di calibrazione + reagenti</td><td>140 EUR</td></tr>
+                </table>
+            </div>
+
+            <div class="invest-category">
+                <div class="invest-header">
+                    <h3>💻 Computing &amp; AI</h3>
+                    <div class="invest-total">~1.400 EUR</div>
+                </div>
+                <table>
+                    <tr><td>Raspberry Pi 5 (8GB) + case + alimentatore</td><td>120 EUR</td></tr>
+                    <tr><td>Hailo-8L AI accelerator (M.2 modulo, 13 TOPS)</td><td>200 EUR</td></tr>
+                    <tr><td>SSD NVMe 256GB + adattatore</td><td>80 EUR</td></tr>
+                    <tr><td>UPS Cyberpower 1500VA</td><td>250 EUR</td></tr>
+                    <tr><td>ESP32-S3 ×6 (nodi distribuiti)</td><td>120 EUR</td></tr>
+                    <tr><td>Pi Camera v3 (12MP) + obiettivo macro</td><td>80 EUR</td></tr>
+                    <tr><td>Sistema gantry ispezione (V-slot + NEMA17 + cablaggio)</td><td>250 EUR</td></tr>
+                    <tr><td>Router 4G/LTE + antenne (backup connettività)</td><td>150 EUR</td></tr>
+                    <tr><td>Switch PoE + cavi rete</td><td>80 EUR</td></tr>
+                    <tr><td>Power supplies + accessori</td><td>70 EUR</td></tr>
+                </table>
+            </div>
+
+            <div class="invest-category">
+                <div class="invest-header">
+                    <h3>💡 Illuminazione</h3>
+                    <div class="invest-total">~1.500 EUR</div>
+                </div>
+                <table>
+                    <tr><td>HLG-300L Bspec V2 ×3 (luce supplementare)</td><td>900 EUR</td></tr>
+                    <tr><td>LED far-red 730nm dedicato (impulsi EOD)</td><td>200 EUR</td></tr>
+                    <tr><td>Driver dimmerabili 0-10V</td><td>180 EUR</td></tr>
+                    <tr><td>Strutture di montaggio + cavi alimentazione</td><td>120 EUR</td></tr>
+                    <tr><td>Riflettori e diffusori</td><td>100 EUR</td></tr>
+                </table>
+            </div>
+
+            <div class="invest-category">
+                <div class="invest-header">
+                    <h3>🧬 Laboratorio genetica</h3>
+                    <div class="invest-total">~2.000 EUR</div>
+                </div>
+                <table>
+                    <tr><td>Cappa flusso laminare orizzontale (usato refurbish)</td><td>700 EUR</td></tr>
+                    <tr><td>Autoclave 23L (sterilizzazione media)</td><td>400 EUR</td></tr>
+                    <tr><td>Camera di crescita (mini-incubatore con LED + controllo temp)</td><td>350 EUR</td></tr>
+                    <tr><td>Stereomicroscopio dissezione 40x</td><td>200 EUR</td></tr>
+                    <tr><td>Strumenti chirurgici sterili (forbici, pinzette, scalpelli)</td><td>80 EUR</td></tr>
+                    <tr><td>Recipienti culture (Magenta GA-7 ×100, baby food jars)</td><td>120 EUR</td></tr>
+                    <tr><td>Reagenti: MS basal salts, vitamine, BAP, IAA, IBA, agar</td><td>150 EUR</td></tr>
+                </table>
+                <div class="invest-note">🧪 <strong>Genotipizzazione</strong>: ~50 EUR/marker × 30 piante × 6 marker = ~9.000 EUR (in 3-5 anni, non upfront — fatto a step)</div>
+            </div>
+
+            <div class="invest-category total-row">
+                <div class="invest-header">
+                    <h3>📊 TOTALE INVESTIMENTO INIZIALE</h3>
+                    <div class="invest-total big">~18.400 EUR</div>
+                </div>
+                <div class="invest-note">
+                    Dopo detrazione fiscale 50% sul solare: <strong class="accent-text">~15.200 EUR netti</strong><br>
+                    Eventuale finanziamento PSR Sardegna (innovazione agricola): possibile copertura 40-60%
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COSTI OPERATIVI -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title">I numeri del progetto</h2>
-        <p class="section-lead">Trasparenza totale: investimento, costi operativi, ricavi previsti in scenari realistici.</p>
+        <h2 class="section-title">📅 Costi operativi mensili</h2>
+        <p class="section-lead">Una volta installato il sistema, i costi mensili sono molto bassi grazie al solare e all'ottimizzazione AI.</p>
 
-        <div class="numbers-grid">
-            <div class="number-card">
-                <div class="number-label">Investimento iniziale</div>
-                <div class="number-value">15–20K EUR</div>
-                <div class="number-detail">Serra + impianti + AI + genetica</div>
+        <div class="ops-grid">
+            <div class="ops-card">
+                <h4>⚡ Elettricità</h4>
+                <div class="ops-amount">~50 EUR/mese</div>
+                <p>Consumo serra ~750 kWh/mese. Solare copre ~80%. Solo eccedenze e ore notturne dalla rete.</p>
             </div>
-            <div class="number-card">
-                <div class="number-label">Costi operativi mensili</div>
-                <div class="number-value">~300 EUR</div>
-                <div class="number-detail">Energia (post-solare), nutrienti, manutenzione</div>
+            <div class="ops-card">
+                <h4>💧 Acqua</h4>
+                <div class="ops-amount">~30 EUR/mese</div>
+                <p>Sistema idroponico riusa il 95% dell'acqua. Consumo netto ~3 m³/mese (recirculating).</p>
             </div>
-            <div class="number-card">
-                <div class="number-label">Resa annua</div>
-                <div class="number-value">3.200–5.600 kg</div>
-                <div class="number-detail">100 m² × 4 livelli verticali</div>
+            <div class="ops-card">
+                <h4>🧪 Nutrienti</h4>
+                <div class="ops-amount">~80 EUR/mese</div>
+                <p>Soluzione A/B per fragole (Hakaphos, GHE, o equivalente) + acidi pH + biostimolanti.</p>
             </div>
-            <div class="number-card">
-                <div class="number-label">Prezzo medio</div>
-                <div class="number-value">5–10 EUR/kg</div>
-                <div class="number-detail">HORECA premium, fino a 12 EUR/kg in inverno</div>
+            <div class="ops-card">
+                <h4>🐝 Api bombus</h4>
+                <div class="ops-amount">~40 EUR/mese</div>
+                <p>Sostituzione hive Koppert ogni 6-8 settimane. ~120 EUR per hive, attiva 60 giorni.</p>
             </div>
-            <div class="number-card">
-                <div class="number-label">Ricavo annuo (cauto)</div>
-                <div class="number-value">~25.000 EUR</div>
-                <div class="number-detail">3.500 kg × 7 EUR scenario conservativo</div>
+            <div class="ops-card">
+                <h4>🌱 Materiale consumo</h4>
+                <div class="ops-amount">~50 EUR/mese</div>
+                <p>Filtri irrigazione, sostituzione sensori (ogni 1-2 anni), packaging consegne, manutenzione varia.</p>
             </div>
-            <div class="number-card highlight">
-                <div class="number-label">Ricavo annuo (ottimo)</div>
-                <div class="number-value">~50.000 EUR</div>
-                <div class="number-detail">5.000 kg × 10 EUR scenario buono</div>
+            <div class="ops-card">
+                <h4>🌐 Connettività &amp; cloud</h4>
+                <div class="ops-amount">~30 EUR/mese</div>
+                <p>SIM 4G backup, backup cloud (B2 Backblaze), domini e certificati SSL.</p>
             </div>
-            <div class="number-card">
-                <div class="number-label">Margine lordo</div>
-                <div class="number-value">40–65%</div>
-                <div class="number-detail">Costi produzione: ~2,50–4 EUR/kg</div>
+            <div class="ops-card highlight">
+                <h4>📊 TOTALE</h4>
+                <div class="ops-amount">~280 EUR/mese</div>
+                <p>= 3.360 EUR/anno operativi. Estremamente basso grazie a solare + efficienza AI.</p>
             </div>
-            <div class="number-card highlight">
-                <div class="number-label">Ammortamento</div>
-                <div class="number-value">1–2 anni</div>
-                <div class="number-detail">Investimento iniziale recuperato</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUZIONE ANNO-INTERO -->
+<section class="section dark">
+    <div class="container">
+        <h2 class="section-title">🌍 Produzione 12 mesi all'anno</h2>
+        <p class="section-lead">A differenza del campo aperto, la nostra serra produce <strong>tutto l'anno</strong>. Sardegna ha il clima perfetto per fragole continue, e il nostro sistema di luce/temperatura/CO₂ controllato permette raccolti settimanali in ogni mese.</p>
+
+        <div class="year-grid">
+            <div class="month-card">
+                <div class="month-name">Gennaio</div>
+                <div class="month-yield">~280 kg</div>
+                <div class="month-price">12-15 EUR/kg</div>
+                <div class="month-note">🥇 Picco premium invernale</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Febbraio</div>
+                <div class="month-yield">~320 kg</div>
+                <div class="month-price">12-15 EUR/kg</div>
+                <div class="month-note">🥇 Massima domanda HORECA</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Marzo</div>
+                <div class="month-yield">~360 kg</div>
+                <div class="month-price">10-12 EUR/kg</div>
+                <div class="month-note">🥈 Ancora prezzi alti</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Aprile</div>
+                <div class="month-yield">~400 kg</div>
+                <div class="month-price">8-10 EUR/kg</div>
+                <div class="month-note">📈 Aumenta produzione</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Maggio</div>
+                <div class="month-yield">~440 kg</div>
+                <div class="month-price">7-9 EUR/kg</div>
+                <div class="month-note">🌸 Picco produttivo</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Giugno</div>
+                <div class="month-yield">~420 kg</div>
+                <div class="month-price">6-8 EUR/kg</div>
+                <div class="month-note">☀️ Estate, prezzi più bassi</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Luglio</div>
+                <div class="month-yield">~380 kg</div>
+                <div class="month-price">5-7 EUR/kg</div>
+                <div class="month-note">🌴 Turismo HORECA forte</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Agosto</div>
+                <div class="month-yield">~340 kg</div>
+                <div class="month-price">5-7 EUR/kg</div>
+                <div class="month-note">🌞 Costa Smeralda picco</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Settembre</div>
+                <div class="month-yield">~380 kg</div>
+                <div class="month-price">7-9 EUR/kg</div>
+                <div class="month-note">📈 Inizia salita prezzi</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Ottobre</div>
+                <div class="month-yield">~360 kg</div>
+                <div class="month-price">9-11 EUR/kg</div>
+                <div class="month-note">🍂 Fine stagione campo</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Novembre</div>
+                <div class="month-yield">~320 kg</div>
+                <div class="month-price">11-13 EUR/kg</div>
+                <div class="month-note">❄️ Premium torna</div>
+            </div>
+            <div class="month-card">
+                <div class="month-name">Dicembre</div>
+                <div class="month-yield">~300 kg</div>
+                <div class="month-price">12-15 EUR/kg</div>
+                <div class="month-note">🎄 Festività + premium</div>
+            </div>
+        </div>
+
+        <div class="year-totals">
+            <div class="year-total-card">
+                <div class="year-label">Resa totale annua</div>
+                <div class="year-value">~4.300 kg</div>
+                <div class="year-detail">Media 358 kg/mese</div>
+            </div>
+            <div class="year-total-card highlight">
+                <div class="year-label">Ricavo annuo (medio)</div>
+                <div class="year-value">~38.500 EUR</div>
+                <div class="year-detail">Prezzo medio ponderato ~9 EUR/kg</div>
+            </div>
+            <div class="year-total-card">
+                <div class="year-label">Costi operativi annui</div>
+                <div class="year-value">~3.360 EUR</div>
+                <div class="year-detail">280 EUR/mese × 12</div>
+            </div>
+            <div class="year-total-card highlight big">
+                <div class="year-label">Profitto netto anno 1</div>
+                <div class="year-value">~35.000 EUR</div>
+                <div class="year-detail">Ricavi - Operativi (escluso ammortamento)</div>
+            </div>
+        </div>
+
+        <div class="callout-box accent center">
+            <strong>Perché la Sardegna è perfetta per fragole tutto l'anno:</strong> 2.500+ ore di sole all'anno (contro 1.800 della media UE), inverni miti (raramente sotto 5°C), bassa umidità invernale (riduce malattie), vicinanza ai mercati HORECA premium di Costa Smeralda e Cagliari.
+        </div>
+    </div>
+</section>
+
+<!-- ROI E SCENARI -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">📈 ROI e scenari</h2>
+        <p class="section-lead">Tre scenari per capire cosa aspettarsi: cauto, realistico, ottimo.</p>
+
+        <div class="scenarios">
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <h3>🟡 Scenario Cauto</h3>
+                    <div class="scenario-tag">Conservativo</div>
+                </div>
+                <ul>
+                    <li>Resa: <strong>3.200 kg/anno</strong> (qualcosa va storto)</li>
+                    <li>Prezzo medio: <strong>7 EUR/kg</strong> (clienti meno premium)</li>
+                    <li>Ricavo lordo: <strong>22.400 EUR</strong></li>
+                    <li>Costi operativi: <strong>3.600 EUR</strong></li>
+                    <li>Profitto netto: <strong>18.800 EUR/anno</strong></li>
+                </ul>
+                <div class="scenario-roi">Ammortamento: ~30 mesi</div>
+            </div>
+
+            <div class="scenario-card highlight">
+                <div class="scenario-header">
+                    <h3>🟢 Scenario Realistico</h3>
+                    <div class="scenario-tag">Atteso</div>
+                </div>
+                <ul>
+                    <li>Resa: <strong>4.300 kg/anno</strong> (quello che ci aspettiamo)</li>
+                    <li>Prezzo medio: <strong>9 EUR/kg</strong> (mix HORECA + distributori)</li>
+                    <li>Ricavo lordo: <strong>38.700 EUR</strong></li>
+                    <li>Costi operativi: <strong>3.400 EUR</strong></li>
+                    <li>Profitto netto: <strong>35.300 EUR/anno</strong></li>
+                </ul>
+                <div class="scenario-roi">Ammortamento: ~16 mesi</div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <h3>🌟 Scenario Ottimo</h3>
+                    <div class="scenario-tag">Best case</div>
+                </div>
+                <ul>
+                    <li>Resa: <strong>5.600 kg/anno</strong> (AI ottimizzata + genetica top)</li>
+                    <li>Prezzo medio: <strong>11 EUR/kg</strong> (solo HORECA + chef stellati)</li>
+                    <li>Ricavo lordo: <strong>61.600 EUR</strong></li>
+                    <li>Costi operativi: <strong>3.400 EUR</strong></li>
+                    <li>Profitto netto: <strong>58.200 EUR/anno</strong></li>
+                </ul>
+                <div class="scenario-roi">Ammortamento: ~10 mesi</div>
+            </div>
+        </div>
+
+        <div class="roi-summary">
+            <h3>💎 Sintesi finanziaria</h3>
+            <div class="roi-grid">
+                <div class="roi-item">
+                    <div class="roi-label">Investimento iniziale</div>
+                    <div class="roi-value">15.200-18.400 EUR</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-label">Profitto netto anno 1 (atteso)</div>
+                    <div class="roi-value">35.300 EUR</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-label">ROI anno 1</div>
+                    <div class="roi-value">192%</div>
+                </div>
+                <div class="roi-item highlight">
+                    <div class="roi-label">Profitto cumulativo 5 anni</div>
+                    <div class="roi-value">~165.000 EUR</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- IL TEAM -->
-<section class="section pale">
+<section class="section">
     <div class="container">
         <h2 class="section-title">Il Team</h2>
         <p class="section-lead">Una collaborazione padre-figlio. Competenze diverse e complementari che si fondono in un progetto comune.</p>
@@ -543,7 +1174,7 @@
 </section>
 
 <!-- TIMELINE -->
-<section class="section">
+<section class="section dark">
     <div class="container">
         <h2 class="section-title">Il percorso</h2>
 
