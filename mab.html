@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurax Agriculture — Documento di Progetto per MAB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M28 4 C 26 4, 14 6, 9 13 C 4 20, 8 28, 16 26 C 24 24, 28 14, 28 4 Z M28 4 L 13 19' fill='%23a78bfa' stroke='%23a78bfa' stroke-width='0.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="mab.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="doc-header">
+    <div class="container">
+        <div class="header-top">
+            <div class="logo-block">
+                <svg class="logo-mark" width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28 4 C 26 4, 14 6, 9 13 C 4 20, 8 28, 16 26 C 24 24, 28 14, 28 4 Z M28 4 L 13 19" fill="#a78bfa" stroke="#a78bfa" stroke-width="0.5" stroke-linejoin="round"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-name">Nurax</span>
+                    <span class="logo-vertical">Agriculture</span>
+                </div>
+            </div>
+            <div class="doc-meta">
+                <div class="doc-type">Documento di Progetto</div>
+                <div class="doc-date">Aprile 2026 · Sardegna</div>
+            </div>
+        </div>
+        <h1 class="doc-title">Progetto Nurax Agriculture</h1>
+        <p class="doc-subtitle">Serra idroponica di fragole premium con intelligenza artificiale e laboratorio di selezione genetica · Documento per consulenza MAB Cagliari</p>
+        <div class="doc-summary">
+            <div class="summary-item">
+                <div class="summary-label">Investimento target</div>
+                <div class="summary-value">EUR 30-90K</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Localizzazione</div>
+                <div class="summary-value">Sardegna</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Forma giuridica</div>
+                <div class="summary-value">Coltivatore Diretto</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Mercato</div>
+                <div class="summary-value">HORECA Premium</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="doc-section">
+    <div class="container">
+        <h2>1. Sintesi esecutiva</h2>
+        <div class="exec-summary">
+            <p><strong>Nurax Agriculture</strong> è un progetto agricolo innovativo che combina <strong>controllo climatico avanzato, intelligenza artificiale e selezione genetica</strong> per produrre fragole di varietà premium tutto l'anno in Sardegna, destinate al mercato HORECA di alto livello (ristorazione stellata e hotel di lusso Costa Smeralda + Cagliari).</p>
+
+            <p>Il progetto si caratterizza per:</p>
+            <ul>
+                <li><strong>Sei varietà premium</strong> selezionate per unicità (Mara des Bois, Charlotte, Gariguette, Profumata di Tortona, Pineberry/F. chiloensis, mix fragoline alpine)</li>
+                <li><strong>Coltivazione idroponica</strong> su substrato (cocco + perlite + biochar), sistema 4-tier verticale</li>
+                <li><strong>Controllo climatico AI-driven</strong>: produzione 12 mesi/anno indipendente da fattori atmosferici esterni</li>
+                <li><strong>Laboratorio di selezione genetica</strong>: tissue culture per propagazione varietà heritage</li>
+                <li><strong>Energia solare</strong> (6-10 kWp) per autonomia energetica e bassi costi operativi</li>
+            </ul>
+
+            <p>Il soggetto giuridico sarà <strong>Gian Luigi Zuddas</strong>, residente in Sardegna, over 60, titolare di pensione PPO (Privilegiata Ordinaria), che opererà come <strong>Coltivatore Diretto</strong> con partita IVA agricola in regime esonero/speciale. Il figlio Nicolò Zuddas (sotto 41 anni, esperto AI/ML) fornirà supporto tecnico e capitale iniziale.</p>
+
+            <p>Il progetto è stato sviluppato attraverso ricerca approfondita (vedi sezioni successive) e validato contro normativa italiana 2026, mercato HORECA Sardegna e benchmark internazionali (es. Oishii USA, Koppert Cress EU).</p>
+        </div>
+
+        <div class="cta-box">
+            <h3>Cosa chiediamo a MAB</h3>
+            <p>Consulenza completa per:</p>
+            <ol>
+                <li>Apertura corretta dell'Impresa Agricola del padre (Coltivatore Diretto + IAP)</li>
+                <li>Identificazione e gestione domande per <strong>tutti gli incentivi compatibili</strong> (PSR SRD01, Parco Agrisolare, Credito 4.0, ZES Unica, Sabatini, ecc.)</li>
+                <li>Strutturazione fiscale ottimale considerando over-65 + pensione PPO</li>
+                <li>Eventuale collaborazione padre + figlio (ditta individuale vs società agricola)</li>
+                <li>Piano di scaling Anno 2-3 sfruttando bandi successivi</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- CONTESTO -->
+<section class="doc-section alt">
+    <div class="container">
+        <h2>2. Contesto strategico</h2>
+
+        <div class="grid-2">
+            <div class="info-block">
+                <h3>2.1 Mercato di riferimento</h3>
+                <p>Il mercato italiano delle fragole vale <strong>EUR 389M (2024)</strong> con prezzi in crescita +8.3% annuo. L'Italia importa <strong>27.500-50.000 tonnellate/anno</strong> di fragole, soprattutto fuori-stagione.</p>
+                <p>In Sardegna esiste:</p>
+                <ul>
+                    <li>Cooperative locali (Arborea, Le Agavi/Ariubedda) — varietà commodity, mercato GDO</li>
+                    <li><strong>Zero produttori indoor di fragole premium</strong></li>
+                    <li><strong>Zero produttori di Mara des Bois, Pineberry, Profumata di Tortona</strong></li>
+                    <li><strong>Gap di fornitura giugno-settembre</strong> (picco turistico Costa Smeralda) — ristoranti importano da Spagna/Marocco</li>
+                </ul>
+                <p><strong>Opportunità di mercato</strong>: posizionamento esclusivo su HORECA premium, prezzi EUR 12-25/kg vs commodity 5-8 EUR/kg.</p>
+            </div>
+
+            <div class="info-block">
+                <h3>2.2 Lezione dall'industria</h3>
+                <p>Il 2025 ha visto <strong>14 vertical farm fallire</strong>, incluse Plenty (USA, $940M raccolti). Il modello "vertical farm pura" non funziona economicamente.</p>
+                <p>I sopravvissuti (Oishii USA, iFarm) hanno seguito un playbook diverso:</p>
+                <ul>
+                    <li>Crop premium (non commodity)</li>
+                    <li>Pricing premium (canali esclusivi)</li>
+                    <li>Controllo costi energetici (solare)</li>
+                    <li>Greenhouse-based (non fully indoor)</li>
+                </ul>
+                <p>Nurax segue esattamente questo playbook, adattato al mercato italiano e al clima sardo.</p>
+            </div>
+        </div>
+
+        <div class="info-block full">
+            <h3>2.3 Vantaggi competitivi della Sardegna</h3>
+            <div class="advantages">
+                <div class="adv">
+                    <strong>2.500+ ore di sole all'anno</strong>
+                    <p>Tra le migliori d'Europa. Riduce significativamente fabbisogno di illuminazione supplementare LED (-60% energia vs Nord Italia)</p>
+                </div>
+                <div class="adv">
+                    <strong>Inverni miti</strong>
+                    <p>Raramente sotto 5°C. Riscaldamento minimo necessario, costi operativi contenuti</p>
+                </div>
+                <div class="adv">
+                    <strong>Mercato HORECA premium</strong>
+                    <p>Costa Smeralda: 4.5M arrivi turistici/anno, +15.4% YoY. Hotel 5 stelle, ristoranti stellati Michelin, pricing premium</p>
+                </div>
+                <div class="adv">
+                    <strong>Energia solare conveniente</strong>
+                    <p>Costo blended raggiungibile EUR 0.06-0.12/kWh vs grid Italia EUR 0.33/kWh</p>
+                </div>
+                <div class="adv">
+                    <strong>Gap di fornitura locale</strong>
+                    <p>Nessun produttore indoor di fragole premium. First-mover advantage</p>
+                </div>
+                <div class="adv">
+                    <strong>Incentivi Mezzogiorno</strong>
+                    <p>ZES Unica 58.78%, PSR Sardegna SRD01, Parco Agrisolare 80% — stack di incentivi unico</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- I 3 PILASTRI -->
+<section class="doc-section">
+    <div class="container">
+        <h2>3. I tre pilastri del progetto</h2>
+        <p class="lead">Nurax Agriculture si basa su tre sistemi integrati che lavorano in sinergia.</p>
+
+        <div class="pillar">
+            <div class="pillar-num">3.1</div>
+            <div class="pillar-content">
+                <h3>🏗️ La Serra Intelligente</h3>
+                <p>Infrastruttura fisica con controllo climatico avanzato per produzione 12 mesi/anno.</p>
+                <h4>Specifiche tecniche</h4>
+                <ul>
+                    <li><strong>Struttura</strong>: serra tunnel 80-100 m² con copertura polycarbonate doppio strato (isolamento termico)</li>
+                    <li><strong>Sistema coltivazione</strong>: 4 tier verticali, substrato cocco/perlite/biochar (70:20:10)</li>
+                    <li><strong>Capacità</strong>: 2.000-3.000 piante in produzione continua</li>
+                    <li><strong>Controllo climatico</strong>: ventilazione HAF + raffreddamento evaporativo + AC inverter (Level 2-4 a seconda budget)</li>
+                    <li><strong>Energia</strong>: impianto solare 6-10 kWp roof-mounted con eventuale storage LFP 10 kWh</li>
+                    <li><strong>Irrigazione</strong>: drip irrigation pressure-compensated con dosaggio nutrienti automatizzato</li>
+                    <li><strong>Impollinazione</strong>: api Bombus (Koppert Natupol Smart) + sistema vibrazione meccanica 100 Hz</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pillar">
+            <div class="pillar-num">3.2</div>
+            <div class="pillar-content">
+                <h3>🤖 Il Cervello AI</h3>
+                <p>Sistema autonomo di intelligenza artificiale che gestisce ogni variabile in tempo reale.</p>
+                <h4>Componenti AI</h4>
+                <ul>
+                    <li><strong>Hardware edge</strong>: Raspberry Pi 5 (8GB RAM) + acceleratore AI Hailo-8L (13 TOPS)</li>
+                    <li><strong>Sensoristica IoT</strong>: rete distribuita di nodi ESP32-S3 per pH, EC, umidità, temperatura, CO₂, luce, ossigeno disciolto</li>
+                    <li><strong>Pipeline dati</strong>: MQTT broker (Mosquitto) → InfluxDB (time-series) → Grafana (dashboards) + FastAPI</li>
+                    <li><strong>Computer vision</strong>: telecamera mobile su rotaia, ispezione 4x giornaliere di ogni pianta</li>
+                </ul>
+                <h4>Modelli AI implementati</h4>
+                <ul>
+                    <li><strong>YOLO26</strong>: rilevamento malattie (botrite, oidio, ragnetti rossi, antracnosi) — accuratezza 88-92% mAP</li>
+                    <li><strong>MobileNetV3</strong>: classificazione stadio crescita (5 stadi: vegetativo → flowering → fruiting → ripening → harvest-ready)</li>
+                    <li><strong>XGBoost</strong>: previsione raccolto a 1-7 giorni (utile per pianificare consegne HORECA)</li>
+                    <li><strong>Isolation Forest</strong>: anomaly detection multivariata su sensori (rilevamento problemi attrezzature)</li>
+                    <li><strong>CNN custom</strong>: stima Brix non distruttiva da immagini RGB+NDVI (R²=0.84)</li>
+                </ul>
+                <h4>Sistemi di controllo</h4>
+                <ul>
+                    <li><strong>PID controllers</strong>: dosaggio automatico pH/EC con tuning per stadio crescita</li>
+                    <li><strong>State machine</strong>: transizioni automatiche tra fasi (vegetativo → fruttificazione)</li>
+                    <li><strong>Safety dual-layer</strong>: limiti hardware ESP32 (firmware) + verifiche software preflight Python</li>
+                    <li><strong>Apprendimento continuo</strong>: ogni ciclo produttivo migliora i modelli predittivi</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pillar">
+            <div class="pillar-num">3.3</div>
+            <div class="pillar-content">
+                <h3>🧬 Il Laboratorio Genetico</h3>
+                <p>Selezione e propagazione di varietà premium con tecniche di tissue culture.</p>
+                <h4>Capacità del laboratorio</h4>
+                <ul>
+                    <li><strong>Coltura tissutale (in vitro)</strong>: clonazione di varietà heritage da meristema apicale (1-2mm)</li>
+                    <li><strong>Eliminazione virus</strong>: rigenerazione di piante sane da cultivar potenzialmente infette</li>
+                    <li><strong>Propagazione massiva</strong>: 1 pianta madre → 50-500 cloni in 6 mesi</li>
+                    <li><strong>Marker-assisted selection</strong>: genotipizzazione con 6 marcatori validati (FaFAD1, FaOMT, FaPG1, FaRPc2, Rca2, FvMYB10)</li>
+                </ul>
+                <h4>Equipaggiamento base</h4>
+                <ul>
+                    <li>Cappa a flusso laminare orizzontale (refurbished)</li>
+                    <li>Autoclave 23L per sterilizzazione media</li>
+                    <li>Camera di crescita LED-controllata (25°C, 16h fotoperiodo)</li>
+                    <li>Stereomicroscopio per dissezione meristematica</li>
+                    <li>Reagenti: MS basal salts, vitamine, ormoni (BAP, IAA, IBA)</li>
+                </ul>
+                <h4>Roadmap genetica</h4>
+                <ul>
+                    <li><strong>Anno 1-2</strong>: tissue culture di varietà heritage italiane (Profumata di Tortona, Fragola di Ribera) e raccolta wild Fragaria vesca sarde</li>
+                    <li><strong>Anno 2-3</strong>: marker-assisted selection di varietà con caratteristiche premium (sapore, resistenza, dimensione)</li>
+                    <li><strong>Anno 3-5</strong>: programma di breeding proprietario tramite cross controllati</li>
+                    <li><strong>Post-2028</strong>: valutazione CRISPR quando l'EU NGT regulation entra in vigore</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIETÀ -->
+<section class="doc-section alt">
+    <div class="container">
+        <h2>4. Portfolio varietale</h2>
+        <p class="lead">Sei varietà premium selezionate per unicità, sapore, resa e legalità. Cinque su sei sono <strong>public domain</strong> (zero royalty) — una richiede negoziazione licenza.</p>
+
+        <table class="varieties-table">
+            <thead>
+                <tr>
+                    <th>Varietà</th>
+                    <th>% area</th>
+                    <th>Origine</th>
+                    <th>Status legale</th>
+                    <th>Prezzo HORECA</th>
+                    <th>Caratteristica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mara des Bois</strong></td>
+                    <td>30%</td>
+                    <td>Marionnet (FR) 1991</td>
+                    <td>✅ Public domain EU</td>
+                    <td>EUR 15-25/kg</td>
+                    <td>Sapore intenso, chef premium la conoscono</td>
+                </tr>
+                <tr>
+                    <td><strong>Charlotte</strong></td>
+                    <td>25%</td>
+                    <td>Marionnet (FR)</td>
+                    <td>✅ Public domain EU</td>
+                    <td>EUR 14-20/kg</td>
+                    <td>Resa stabile, profilo aromatico delicato</td>
+                </tr>
+                <tr>
+                    <td><strong>Gariguette</strong></td>
+                    <td>15%</td>
+                    <td>INRA (FR) 1976</td>
+                    <td>✅ Public domain EU</td>
+                    <td>EUR 18-28/kg</td>
+                    <td>Iconica francese, allungata, aromatica</td>
+                </tr>
+                <tr>
+                    <td><strong>Profumata di Tortona</strong> (Fragaria moschata)</td>
+                    <td>10%</td>
+                    <td>Heritage italiano</td>
+                    <td>✅ Public domain</td>
+                    <td>EUR 30-60/kg</td>
+                    <td>Aroma muschiato unico, year-round via tissue culture</td>
+                </tr>
+                <tr>
+                    <td><strong>Fragola bianca</strong> (Pineberry o F. chiloensis)</td>
+                    <td>10%</td>
+                    <td>Hansabred (DE) o wild</td>
+                    <td>⚠️ Negoziazione</td>
+                    <td>EUR 25-35/kg</td>
+                    <td>Wow factor, esclusiva regionale</td>
+                </tr>
+                <tr>
+                    <td><strong>Mix alpine</strong> (Regina + White + Yellow)</td>
+                    <td>10%</td>
+                    <td>Heritage</td>
+                    <td>✅ Public domain</td>
+                    <td>EUR 40-60/kg</td>
+                    <td>Tre colori diversi, effetto scenografico per dessert</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-block full">
+            <h3>4.1 Strategia varietale</h3>
+            <p>La selezione di 5 varietà <strong>public domain</strong> minimizza:</p>
+            <ul>
+                <li>Costi di royalty annui (zero per 5 su 6 varietà)</li>
+                <li>Dipendenza da breeder esterni (Marionnet, Hansabred)</li>
+                <li>Rischio legale UPOV/CPVO (enforcement reale in EU)</li>
+                <li>Limitazioni alla propagazione interna (tissue culture libera per 5 varietà)</li>
+            </ul>
+            <p>La sesta varietà (fragola bianca) viene gestita con due opzioni:</p>
+            <ul>
+                <li><strong>Opzione A</strong>: negoziazione sub-licenza con Gentile Group (Basilicata, esclusiva italiana Florida Pearl Pineberry)</li>
+                <li><strong>Opzione B</strong>: pivot a Fragaria chiloensis (specie selvatica sud-americana, public domain) via gene bank Università</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="doc-section">
+    <div class="container">
+        <h2>5. Piano di investimento</h2>
+        <p class="lead">Tre scenari di investimento, dal più conservativo al più ambizioso. Lo scenario raccomandato è B (staged, EUR 30K iniziale + upgrade Anno 2-3 via incentivi).</p>
+
+        <div class="scenarios-doc">
+            <div class="scenario-doc">
+                <h3>Scenario A · Test bed</h3>
+                <div class="scenario-amount">EUR 15.000</div>
+                <p>Validazione minima del modello. Serra 50m², climate base, 500 piante, 3 varietà. Revenue Anno 1: EUR 4-5K. Indicato per chi vuole validare prima di investire.</p>
+                <div class="scenario-tag">Conservativo</div>
+            </div>
+
+            <div class="scenario-doc recommended">
+                <h3>Scenario B · Staged ⭐</h3>
+                <div class="scenario-amount">EUR 30.000</div>
+                <p>Avvio commerciale ottimale. Serra 80m², climate Level 2, 1.500 piante × 5 varietà. Revenue Anno 1: EUR 12-15K, Anno 3: EUR 45-50K. Upgrade a Level 4 in Anno 2-3 via grants. <strong>Migliore ROI/EUR investito (4.3x in 5 anni)</strong>.</p>
+                <div class="scenario-tag">Raccomandato</div>
+            </div>
+
+            <div class="scenario-doc">
+                <h3>Scenario C · Full Level 4</h3>
+                <div class="scenario-amount">EUR 90.000</div>
+                <p>Setup completo da subito. Serra 100m², climate Level 4 (geotermico, AC, fog cooling), 3.000 piante × 6 varietà, lab tissue culture completo. Revenue Anno 3: EUR 60-65K. Per chi può anticipare cassa.</p>
+                <div class="scenario-tag">Aggressivo</div>
+            </div>
+        </div>
+
+        <h3>5.1 Dettaglio investimento Scenario B (raccomandato)</h3>
+        <table class="investment-table">
+            <thead>
+                <tr>
+                    <th>Voce</th>
+                    <th>Importo</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Terreno (affitto 18 mesi, no acquisto)</td><td>EUR 2.000</td><td>Risparmio EUR 14K vs acquisto</td></tr>
+                <tr><td>Serra tunnel 80m² polycarbonate doppio strato</td><td>EUR 8.000</td><td>Acciaio zincato, film UV 200μm</td></tr>
+                <tr><td>Sistema 4-tier verticale + substrato</td><td>EUR 2.500</td><td>Cocco/perlite/biochar 70:20:10</td></tr>
+                <tr><td>Climate Level 2 (HAF fans + evaporative + shade + chiller)</td><td>EUR 6.500</td><td>Upgrade a L4 in Anno 2-3 via grants</td></tr>
+                <tr><td>Sistema idroponico + pompe peristaltiche</td><td>EUR 3.000</td><td>Drip irrigation pressure-compensated</td></tr>
+                <tr><td>Sensori IoT + Pi 5 + AI base</td><td>EUR 3.500</td><td>Hailo-8L aggiunto in Anno 2</td></tr>
+                <tr><td>LED supplementare 2 unità</td><td>EUR 1.500</td><td>Mars Hydro o equivalente</td></tr>
+                <tr><td>Piante (1.500 × 5 varietà)</td><td>EUR 1.200</td><td>Dai vivai certificati italiani</td></tr>
+                <tr><td>Nutrienti + biostimolanti prima stagione</td><td>EUR 800</td><td>GH Flora + silicio + Trichoderma</td></tr>
+                <tr><td>Apertura impresa + MAB consulting + SCIA</td><td>EUR 3.000</td><td>Vostra prestazione professionale</td></tr>
+                <tr><td>Packaging + materiali HORECA</td><td>EUR 500</td><td>Crate legno, biglietti, brochure</td></tr>
+                <tr><td>Buffer (8%)</td><td>EUR 2.500</td><td></td></tr>
+                <tr class="table-total"><td><strong>TOTALE LORDO</strong></td><td><strong>EUR 35.000</strong></td><td></td></tr>
+                <tr><td>Incentivi realistici Anno 1 (Sabatini + Credito 4.0 + IVA)</td><td>-EUR 5.000</td><td></td></tr>
+                <tr class="table-net"><td><strong>INVESTIMENTO NETTO ANNO 1</strong></td><td><strong>EUR 30.000</strong></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- INCENTIVI - LA SEZIONE PIÙ IMPORTANTE PER MAB -->
+<section class="doc-section alt highlight">
+    <div class="container">
+        <h2>6. Incentivi: cosa chiediamo a MAB di gestire 🎯</h2>
+        <p class="lead">Questa è la sezione centrale del documento. Vi chiediamo consulenza e gestione delle pratiche per <strong>massimizzare la copertura grants/crediti</strong> sul progetto.</p>
+
+        <div class="incentive-priority">
+            <h3>6.1 Priorità 1 — Grants e contributi a fondo perduto</h3>
+
+            <div class="incentive-detail">
+                <h4>🏆 PSR Sardegna SRD01 — Investimenti aziende agricole</h4>
+                <ul>
+                    <li><strong>Importo</strong>: 60% contributo a fondo perduto (70% se giovani agricoltori)</li>
+                    <li><strong>Su nostro investimento</strong>: ~EUR 18-25K recuperabili</li>
+                    <li><strong>Bando 2026</strong>: chiuso 30 aprile (mancano pochi giorni — non fattibile completare)</li>
+                    <li><strong>Bando 2027</strong>: nostra finestra realistica</li>
+                    <li><strong>Vostro supporto richiesto</strong>: redazione business plan, computo metrico, asseverazioni, presentazione domanda ARGEA</li>
+                </ul>
+            </div>
+
+            <div class="incentive-detail">
+                <h4>☀️ Parco Agrisolare PNRR — Solare agricolo 80%</h4>
+                <ul>
+                    <li><strong>Importo</strong>: 80% a fondo perduto su impianto fotovoltaico agricolo</li>
+                    <li><strong>Su nostro impianto 6-10 kWp</strong>: ~EUR 5-7K recuperabili</li>
+                    <li><strong>Bando 2026</strong>: chiuso 9 aprile</li>
+                    <li><strong>Bando 2027</strong>: attendiamo apertura</li>
+                    <li><strong>Vostro supporto richiesto</strong>: progettazione tecnica, GSE pratica, gestione click-day</li>
+                </ul>
+            </div>
+
+            <div class="incentive-detail">
+                <h4>💻 Credito d'Imposta Agricoltura 4.0 — 40% su beni IoT/AI</h4>
+                <ul>
+                    <li><strong>Importo</strong>: 40% credito d'imposta su sensori, ESP32, gantry AI, controller</li>
+                    <li><strong>Sui nostri beni 4.0</strong>: ~EUR 2-3K recuperabili</li>
+                    <li><strong>Recupero</strong>: compensazione F24</li>
+                    <li><strong>Vostro supporto richiesto</strong>: classificazione 4.0, perizia asseverata da ingegnere, gestione adempimenti</li>
+                </ul>
+            </div>
+
+            <div class="incentive-detail">
+                <h4>🏛️ ZES Unica Mezzogiorno 58.78%</h4>
+                <ul>
+                    <li><strong>Importo</strong>: credito d'imposta 58.78% su investimenti agricoli (Sardegna inclusa)</li>
+                    <li><strong>Soglia minima</strong>: EUR 50.000 spese ammissibili (su Scenario B residuale, su Scenario C pieno)</li>
+                    <li><strong>Sul nostro investimento Scenario C</strong>: ~EUR 15-20K recuperabili</li>
+                    <li><strong>Recupero</strong>: compensazione F24 su 5 anni</li>
+                    <li><strong>Comunicazione</strong>: 31 marzo - 30 maggio dell'anno successivo</li>
+                    <li><strong>Vostro supporto richiesto</strong>: valutazione applicabilità, comunicazione AdE, gestione compensazioni</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="incentive-priority">
+            <h3>6.2 Priorità 2 — Strumenti finanziari agevolati</h3>
+
+            <div class="incentive-detail">
+                <h4>💼 Sabatini Agricola — Bonus interessi su mutuo macchinari</h4>
+                <ul>
+                    <li><strong>Tasso bonus MIMIT</strong>: 2.75% (3.575% per beni 4.0)</li>
+                    <li><strong>Cumulabile</strong>: con ZES, Credito 4.0, PSR</li>
+                    <li><strong>Su mutuo 25K macchinari</strong>: ~EUR 2.500 risparmio</li>
+                    <li><strong>Vostro supporto richiesto</strong>: identificazione banca convenzionata, pratica MIMIT</li>
+                </ul>
+            </div>
+
+            <div class="incentive-detail">
+                <h4>🏦 Fondo Garanzia PMI 80% (gratuito 2026)</h4>
+                <ul>
+                    <li><strong>Funzione</strong>: garantisce 80% del mutuo bancario</li>
+                    <li><strong>Vantaggio</strong>: nessuna ipoteca su immobili richiesta</li>
+                    <li><strong>Costo</strong>: gratuito nel 2026</li>
+                    <li><strong>Vostro supporto richiesto</strong>: attivazione presso Mediocredito Centrale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="incentive-priority">
+            <h3>6.3 Priorità 3 — Ottimizzazioni fiscali ricorrenti</h3>
+
+            <div class="incentive-detail">
+                <h4>👤 Coltivatore Diretto over-65 + pensione PPO</h4>
+                <ul>
+                    <li><strong>Riduzione INPS 50%</strong> (Art. 59 c.15 L.449/1997) — da verificare se PPO conta (era ex-INPDAP per molti)</li>
+                    <li><strong>Esenzione IRPEF redditi agrari fino EUR 10.000</strong> (Legge Bilancio 2026)</li>
+                    <li><strong>Esenzione IMU terreno agricolo</strong> (Cassazione 14915/2025)</li>
+                    <li><strong>Regime esonero IVA</strong> sotto EUR 7.000 volume affari (Art. 34 c.6 DPR 633/1972)</li>
+                    <li><strong>PPC su acquisto terreno</strong> (futuro): risparmio ~EUR 1K</li>
+                    <li><strong>Vostro supporto richiesto</strong>: verifica eligibility specifica per PPO, ottimizzazione regime tributario</li>
+                </ul>
+            </div>
+
+            <div class="incentive-detail">
+                <h4>🏷️ Detrazioni IRPEF</h4>
+                <ul>
+                    <li>Detrazione 50% lavori serra (10 anni, ~EUR 4K totali)</li>
+                    <li>Detrazione IVA agricola regime ordinario</li>
+                    <li>Eventuale Patent Box per IP futura</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>📊 Stack incentivi target totale</h3>
+            <p>Su Scenario B (EUR 30K netto Anno 1):</p>
+            <ul>
+                <li>Anno 1 incentivi: EUR 5K (Sabatini + Credito 4.0 + IVA)</li>
+                <li>Anno 2 incentivi (PSR + Agrisolare): <strong>EUR 18-25K</strong></li>
+                <li>Anno 3 incentivi residui: EUR 5-8K</li>
+                <li><strong>TOTALE COPERTURA STIMATA: 60-75%</strong> dell'investimento complessivo</li>
+            </ul>
+            <p>L'obiettivo della consulenza MAB è <strong>massimizzare questa copertura</strong> attraverso pianificazione fiscale ottimale, timing dei bandi, e cumulo strumenti.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ECONOMIA -->
+<section class="doc-section">
+    <div class="container">
+        <h2>7. Proiezioni economiche</h2>
+        <p class="lead">Scenario B (raccomandato) — proiezioni conservative basate su mercato HORECA premium Sardegna.</p>
+
+        <table class="financial-table">
+            <thead>
+                <tr>
+                    <th>Anno</th>
+                    <th>Resa kg</th>
+                    <th>Prezzo medio</th>
+                    <th>Revenue</th>
+                    <th>Costi operativi</th>
+                    <th>Profitto netto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1 (calibrazione)</td><td>~800</td><td>EUR 17/kg</td><td>EUR 13.600</td><td>EUR 8.700</td><td><strong>EUR 4.900</strong></td></tr>
+                <tr><td>2 (crescita)</td><td>~2.000</td><td>EUR 18/kg</td><td>EUR 36.000</td><td>EUR 11.000</td><td><strong>EUR 25.000</strong></td></tr>
+                <tr><td>3 (regime)</td><td>~2.700</td><td>EUR 19/kg</td><td>EUR 51.300</td><td>EUR 13.500</td><td><strong>EUR 37.800</strong></td></tr>
+                <tr><td>4</td><td>~3.000</td><td>EUR 20/kg</td><td>EUR 60.000</td><td>EUR 14.000</td><td><strong>EUR 46.000</strong></td></tr>
+                <tr><td>5</td><td>~3.000</td><td>EUR 22/kg</td><td>EUR 66.000</td><td>EUR 14.500</td><td><strong>EUR 51.500</strong></td></tr>
+                <tr class="table-total"><td colspan="5"><strong>CUMULATIVO 5 ANNI</strong></td><td><strong>EUR 165.200</strong></td></tr>
+            </tbody>
+        </table>
+
+        <div class="grid-2">
+            <div class="info-block">
+                <h3>7.1 Indicatori chiave</h3>
+                <ul>
+                    <li><strong>Investimento netto Anno 1</strong>: EUR 30.000</li>
+                    <li><strong>Payback period</strong>: ~2.5 anni</li>
+                    <li><strong>ROI 5 anni</strong>: 4.3x (EUR 130K profitto su 30K investimento)</li>
+                    <li><strong>Margine lordo regime</strong>: 65-75%</li>
+                    <li><strong>Punto di pareggio</strong>: ~1.500 kg vendite annue</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3>7.2 Rischi principali</h3>
+                <ul>
+                    <li>Anno 1 underperformance (probabilità 40%, impatto medio)</li>
+                    <li>Grants non ottenuti (probabilità 30%, impatto alto)</li>
+                    <li>Mercato HORECA Sardegna saturazione (probabilità 15%, impatto medio)</li>
+                    <li>Padre disponibilità ridotta (probabilità 15%, impatto alto)</li>
+                    <li>Estrema crisi turismo Costa Smeralda (probabilità 10%, impatto alto)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IL TEAM -->
+<section class="doc-section alt">
+    <div class="container">
+        <h2>8. Il team</h2>
+
+        <div class="grid-2">
+            <div class="team-doc">
+                <h3>Gian Luigi Zuddas — Coltivatore Diretto</h3>
+                <ul>
+                    <li>Età: oltre 60 anni</li>
+                    <li>Residenza: Sardegna</li>
+                    <li>Pensione: PPO (Privilegiata Ordinaria)</li>
+                    <li>Background: gestione operativa, conoscenza territorio</li>
+                    <li>Ruolo: titolare Impresa Agricola, gestione operativa quotidiana, raccolta, consegne, relazioni HORECA locali</li>
+                </ul>
+                <p><strong>Eligibility incentivi over-60</strong>: da verificare con MAB:</p>
+                <ul>
+                    <li>Riduzione INPS 50% over-65 (esclude ex-INPDAP — verificare se PPO è ex-INPDAP)</li>
+                    <li>Cumulabilità PPO con redditi agricoli (di solito 100%, ma verificare)</li>
+                    <li>Esenzione IMU + IRPEF agraria (confermate da Cassazione)</li>
+                </ul>
+            </div>
+
+            <div class="team-doc">
+                <h3>Nicolò Zuddas — Founder, AI & Tecnologia</h3>
+                <ul>
+                    <li>Età: sotto 41 anni (eligible "giovane agricoltore" ma non titolare azienda)</li>
+                    <li>Background: AI/ML engineer, Bittensor miner, parte di Nurax Dynamics</li>
+                    <li>Ruolo: sviluppo software AI, modelli ML, infrastruttura tecnica, capitale iniziale, supporto remoto</li>
+                </ul>
+                <p><strong>Possibili strutture padre+figlio</strong> (da valutare con MAB):</p>
+                <ul>
+                    <li>Opzione 1: ditta individuale padre (semplicità, no benefici giovani per Nicolò)</li>
+                    <li>Opzione 2: società agricola padre+figlio (sblocca grants giovani Nicolò)</li>
+                    <li>Opzione 3: ibrido — padre apre Anno 1, Nicolò entra Anno 2-3 per espansione</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-block full">
+            <h3>8.1 Considerazioni sulla residenza fiscale di Nicolò</h3>
+            <p>Nicolò sta valutando trasferimento residenza a Panama (per motivi indipendenti dal progetto agricolo: ottimizzazione fiscale Bittensor mining). Questo NON impatta la fattibilità del progetto perché:</p>
+            <ul>
+                <li>L'azienda agricola è del padre (Coltivatore Diretto residente Italia)</li>
+                <li>Tutti gli incentivi sono per il padre, indipendentemente dalla residenza Nicolò</li>
+                <li>Nicolò può fornire capitale come prestito personale (no equity ufficiale)</li>
+                <li>Supporto remoto Nicolò avviene via SSH/video call — no presenza fisica richiesta</li>
+            </ul>
+            <p>Tuttavia, se MAB ritiene strategicamente vantaggioso strutturare padre+figlio in società, il trasferimento di Nicolò potrebbe influenzare la scelta. Aperti a discutere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COSA CHIEDIAMO A MAB -->
+<section class="doc-section conclusion">
+    <div class="container">
+        <h2>9. Cosa chiediamo a MAB</h2>
+
+        <div class="ask-grid">
+            <div class="ask-card">
+                <div class="ask-num">01</div>
+                <h3>Apertura corretta dell'attività</h3>
+                <p>Strutturazione fiscale ottimale considerando profilo over-65 + pensione PPO del padre. Scelta tra Coltivatore Diretto vs IAP, regime IVA esonero/speciale/ordinario, scelta ATECO corretto per fragole idroponiche.</p>
+            </div>
+
+            <div class="ask-card">
+                <div class="ask-num">02</div>
+                <h3>Pianificazione completa incentivi</h3>
+                <p>Identificazione e pianificazione applicazione di TUTTI gli incentivi compatibili: PSR SRD01 2027, Parco Agrisolare 2027, ZES Unica, Credito 4.0, Sabatini, eventuale PSR Misura 16 cooperazione, voucher MIMIT.</p>
+            </div>
+
+            <div class="ask-card">
+                <div class="ask-num">03</div>
+                <h3>Verifica eligibility specifica padre</h3>
+                <p>Conferma applicabilità riduzione INPS 50% over-65 con PPO. Verifica cumulabilità PPO + redditi agricoli. Identificazione classificazione zona svantaggiata del comune target. Tutti i benefici fiscali ricorrenti.</p>
+            </div>
+
+            <div class="ask-card">
+                <div class="ask-num">04</div>
+                <h3>Strategia padre + figlio</h3>
+                <p>Valutazione opzioni strutturali: ditta individuale padre vs società agricola padre+figlio vs ibrido. Trade-off tra benefici giovani agricoltori (Nicolò) e benefici over-65 (padre). Implicazioni residenza Nicolò Panama.</p>
+            </div>
+
+            <div class="ask-card">
+                <div class="ask-num">05</div>
+                <h3>Piano scaling Anno 2-3</h3>
+                <p>Strutturazione roadmap upgrade (Level 2 → Level 4 climate, lab tissue culture, espansione). Sequencing applicazioni grants (PSR 2027 → Agrisolare 2027 → Sardegna Ricerche futuri bandi). Massimizzazione cumulo.</p>
+            </div>
+
+            <div class="ask-card">
+                <div class="ask-num">06</div>
+                <h3>Gestione documentale + adempimenti</h3>
+                <p>Gestione tutte le pratiche burocratiche: SCIA edilizia per serra, certificazioni Residuo Zero, HACCP plan, perizie asseverate (Credito 4.0), pratiche INPS coltivatore diretto, dichiarazioni fiscali agricole.</p>
+            </div>
+        </div>
+
+        <div class="cta-box conclusion">
+            <h3>🤝 Modalità di collaborazione proposta</h3>
+            <p>Siamo aperti a diverse formule di collaborazione con MAB:</p>
+            <ul>
+                <li><strong>Consulenza one-shot</strong>: pacchetto iniziale per apertura + impostazione pratiche</li>
+                <li><strong>Retainer mensile</strong>: assistenza continuativa per gestione bandi/pratiche</li>
+                <li><strong>Success fee</strong>: compenso variabile su grants effettivamente ottenuti</li>
+                <li><strong>Mix dei tre</strong>: base fissa + success fee su risultati</li>
+            </ul>
+            <p>Ci aspettiamo investimento iniziale in consulenza nel range <strong>EUR 1.500-3.000</strong> per impostazione, più gestione singole pratiche secondo accordi specifici.</p>
+        </div>
+
+        <div class="contact-section">
+            <h3>📧 Contatti</h3>
+            <p><strong>Nicolò Zuddas</strong> — Founder, contatto principale per discussioni tecniche/strategiche</p>
+            <p>📧 ciao@nurax.io</p>
+            <p>🌐 nicknamess96.github.io/nurax-strawberry-pitch</p>
+            <p style="margin-top: 20px;"><strong>Gian Luigi Zuddas</strong> — Coltivatore Diretto, contatto operativo locale</p>
+            <p>📱 [da definire]</p>
+        </div>
+
+        <div class="signature-block">
+            <p>Documento preparato: aprile 2026</p>
+            <p>Versione: 1.0</p>
+            <p>Confidenziale — destinato a uso interno consulenza MAB</p>
+        </div>
+    </div>
+</section>
+
+<footer class="doc-footer">
+    <div class="container">
+        <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 4 C 26 4, 14 6, 9 13 C 4 20, 8 28, 16 26 C 24 24, 28 14, 28 4 Z M28 4 L 13 19" fill="#a78bfa" stroke="#a78bfa" stroke-width="0.5" stroke-linejoin="round"/>
+            </svg>
+            <span>Nurax Agriculture</span>
+        </div>
+        <p>Documento di progetto · Aprile 2026 · Sardegna, Italia</p>
+    </div>
+</footer>
+
+</body>
+</html>
