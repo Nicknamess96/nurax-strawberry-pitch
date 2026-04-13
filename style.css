@@ -1512,6 +1512,104 @@ body {
     color: var(--accent-glow);
 }
 
+/* ===== COMPARISON (AI vs Traditional) ===== */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    .compare-arrow {
+        transform: rotate(90deg);
+        margin: 8px auto !important;
+    }
+}
+
+.compare-side {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    transition: border-color 0.2s;
+}
+
+.compare-side.traditional {
+    border-color: var(--border);
+    background: linear-gradient(180deg, rgba(122,122,144,0.05) 0%, var(--bg-card) 100%);
+}
+
+.compare-side.ai {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(0,214,143,0.08) 0%, var(--bg-card) 100%);
+}
+
+.compare-side h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--border);
+    color: white;
+}
+
+.compare-side.traditional h3 {
+    color: var(--text-soft);
+}
+
+.compare-side.ai h3 {
+    color: var(--accent-glow);
+}
+
+.compare-side ul {
+    list-style: none;
+}
+
+.compare-side li {
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+    padding-left: 22px;
+    position: relative;
+    border-bottom: 1px dashed var(--border);
+}
+
+.compare-side li:last-child {
+    border-bottom: none;
+}
+
+.compare-side.traditional li::before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+}
+
+.compare-side.ai li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: var(--accent-glow);
+}
+
+.compare-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding: 0 8px;
+    white-space: nowrap;
+}
+
 /* ===== GRANTS ===== */
 .grants-grid {
     display: grid;
